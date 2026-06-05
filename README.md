@@ -2,13 +2,13 @@
 
 **Head of Product · Data Domain · AI-Native Builder**
 
-📍 Dubai, UAE &nbsp;·&nbsp; 🌐 [jintomjose.github.io](https://jintomjose.github.io) &nbsp;·&nbsp; 💼 [LinkedIn](https://www.linkedin.com/in/jintojose) &nbsp;·&nbsp; 🐙 [GitHub](https://github.com/jintomjose)
+📍 The Netherlands &nbsp;·&nbsp; 🌐 [jintomjose.github.io](https://jintomjose.github.io) &nbsp;·&nbsp; 💼 [LinkedIn](https://www.linkedin.com/in/jintojose) &nbsp;·&nbsp; 🐙 [GitHub](https://github.com/jintomjose)
 
 ---
 
 ## About
 
-I spent over a decade in the data domain — architecting pipelines, building financial data systems, and designing data products for enterprise and financial institutions. That gave me something most product people don't have: I think in systems, not features.
+I spent over 13 years in the data domain — architecting pipelines, building financial data systems, and designing data products for enterprise and financial institutions. That gave me something most product people don't have: I think in systems, not features.
 
 From there I moved into product leadership — heading product teams, shipping roadmaps, and bridging the gap between data intelligence and business outcomes.
 
@@ -68,7 +68,7 @@ Now I'm in a third chapter: building AI-native applications from scratch. Claude
 
 | | |
 |---|---|
-| 10+ | Years in the data domain |
+| 13+ | Years in the data domain |
 | 4 | Active builds in progress |
 | 11 | Total projects |
 | 5 | Live deployments |
