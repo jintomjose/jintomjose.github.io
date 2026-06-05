@@ -1,0 +1,175 @@
+{
+  "person": {
+    "name": "Jinto Jose",
+    "title": "Head of Product",
+    "location": "Dubai, UAE",
+    "summary": "Head of Product with 10+ years in the data domain. Specialist in data product design, financial data systems, and AI-native application development. Now building full-stack AI applications with Claude API, Vercel, and GitHub.",
+    "urls": {
+      "portfolio": "https://jintomjose.github.io",
+      "github": "https://github.com/jintomjose",
+      "linkedin": "https://www.linkedin.com/in/jintojose"
+    },
+    "skills": {
+      "product": ["Data Product Design", "Roadmapping", "OKRs", "Product Owner KPIs", "Agile", "Product-led Growth"],
+      "technical": ["Claude API", "React", "Next.js", "Vite", "Vercel", "GitHub Actions", "HTML", "CSS", "JavaScript", "Data Pipelines", "Financial Data Systems"],
+      "domains": ["Financial Services", "AI/ML", "Customer Experience", "Engineering Intelligence"]
+    }
+  },
+  "projects": [
+    {
+      "id": "inbox-intelligence",
+      "name": "Inbox Intelligence",
+      "type": "AI Application",
+      "category": "ai",
+      "status": "building",
+      "description": "End-to-end AI pipeline that surfaces what actually matters from your inbox. Built with Claude API, Gmail API, and Vercel. Full-stack AI application built from scratch.",
+      "stack": ["Claude API", "Gmail API", "React", "Vite", "Vercel"],
+      "domain": "AI / Productivity",
+      "urls": {
+        "github": "https://github.com/jintomjose/inbox-intelligence",
+        "live": "https://inbox-intelligence-testjj.vercel.app/"
+      }
+    },
+    {
+      "id": "banking-ai-comparison",
+      "name": "Banking AI Operating Models",
+      "type": "Research Tool",
+      "category": "research",
+      "status": "live",
+      "description": "Interactive research tool comparing AI Hub-and-Spoke operating models across ING, DBS, JP Morgan, Emirates NBD, Revolut, and Bank of America. Covers AI governance, build vs buy decisions, and cultural readiness.",
+      "stack": ["HTML", "CSS", "JavaScript", "Vercel"],
+      "domain": "FinTech / Research",
+      "urls": {
+        "github": "https://github.com/jintomjose/banking-ai-comparison",
+        "live": "https://banking-ai-comparison.vercel.app/"
+      }
+    },
+    {
+      "id": "encyclical-companion",
+      "name": "Encyclical Companion",
+      "type": "Web Application",
+      "category": "web",
+      "status": "building",
+      "description": "AI-powered companion app for deep reading of Catholic papal encyclicals. Features timeline, themes, personal notes, and AI-powered study chat.",
+      "stack": ["Claude API", "React", "Vite", "Vercel"],
+      "domain": "Personal / AI",
+      "urls": {
+        "github": "https://github.com/jintomjose/encyclical-companion",
+        "live": "https://encyclical-companion.vercel.app/"
+      }
+    },
+    {
+      "id": "data-product-var",
+      "name": "Value at Risk",
+      "type": "Data Product",
+      "category": "data",
+      "status": "concept",
+      "description": "Portfolio-level Value at Risk (VaR) designed as a consumable data product. Built around data product principles: discoverable, addressable, trustworthy, self-describing. Not a static report.",
+      "stack": ["Data Product Design"],
+      "domain": "Finance / Risk",
+      "urls": {
+        "github": "https://github.com/jintomjose/DataProduct-Value-At-Risk"
+      }
+    },
+    {
+      "id": "data-product-daily-pnl",
+      "name": "Daily PnL",
+      "type": "Data Product",
+      "category": "data",
+      "status": "concept",
+      "description": "Real-time daily profit and loss as a self-describing data asset. Built for financial decision-makers, not analysts.",
+      "stack": ["Data Product Design"],
+      "domain": "Finance / Analytics",
+      "visibility": "private",
+      "urls": {}
+    },
+    {
+      "id": "data-product-innovation-index",
+      "name": "Innovation Index for Dev Teams",
+      "type": "Data Product",
+      "category": "data",
+      "status": "concept",
+      "description": "Turns the qualitative question 'are we innovative?' into a measurable, Product Owner-aligned KPI set. Applies data product design thinking to engineering team performance intelligence.",
+      "stack": ["Data Product Design", "Product KPIs"],
+      "domain": "Product Intelligence / Engineering",
+      "urls": {
+        "github": "https://github.com/jintomjose/DataProduct-Innovation-Index-4-DevTeams"
+      }
+    },
+    {
+      "id": "data-product-zero-contact",
+      "name": "Goal: Zero Contact",
+      "type": "Data Product",
+      "category": "data",
+      "status": "concept",
+      "description": "Data product designed to drive customer contact rates to zero through proactive, intelligent data surfaces.",
+      "stack": ["Data Product Design"],
+      "domain": "Customer Experience / Automation",
+      "visibility": "private",
+      "urls": {}
+    },
+    {
+      "id": "momentum",
+      "name": "Momentum",
+      "type": "Web Application",
+      "category": "web",
+      "status": "live",
+      "description": "Habit tracker built on one opinionated constraint: only 3 habits. Designed around the principle that focus requires limitation. Product thinking applied to behaviour design.",
+      "stack": ["Web App", "Base44"],
+      "domain": "Productivity / Habit Design",
+      "urls": {
+        "github": "https://github.com/jintomjose/WebApp-momentum.app",
+        "live": "https://momentum-3df5dd58.base44.app/home",
+        "instagram": "https://www.instagram.com/momentum.app.3"
+      }
+    },
+    {
+      "id": "regina-caeli-creations",
+      "name": "ReginaCaeliCreations",
+      "type": "Web Application",
+      "category": "web",
+      "status": "live",
+      "description": "E-commerce site for a home baker. Real product problem, real user, real delivery.",
+      "stack": ["Web App", "Base44"],
+      "domain": "E-Commerce / Personal",
+      "urls": {
+        "github": "https://github.com/jintomjose/WebApp-Annus-cakes.app",
+        "live": "https://annus-cakes-0eadb5fc.base44.app",
+        "instagram": "https://www.instagram.com/ReginaCaeliCreations"
+      }
+    },
+    {
+      "id": "pl-wheel",
+      "name": "PL Wheel Assessment",
+      "type": "Assessment Tool",
+      "category": "product",
+      "status": "complete",
+      "description": "Petra PL Wheel assessment framework turned into a product artifact — doc, code, and measurable outcome.",
+      "stack": ["Assessment Design"],
+      "domain": "Product Leadership",
+      "visibility": "private",
+      "urls": {}
+    },
+    {
+      "id": "ai-transformation",
+      "name": "AI Transformation Project",
+      "type": "Research / Strategy",
+      "category": "ai",
+      "status": "active",
+      "description": "Documenting and driving the shift to AI-native ways of working within an organisation. Covers tooling, process change, and team capability building.",
+      "stack": ["Strategy", "Documentation"],
+      "domain": "AI Strategy / Organisational Change",
+      "visibility": "private",
+      "urls": {}
+    }
+  ],
+  "meta": {
+    "generated": "2026-06-05",
+    "total_projects": 11,
+    "live_deployments": 5,
+    "active_builds": 4,
+    "years_in_data": "10+",
+    "source": "https://jintomjose.github.io",
+    "ai_readable": "https://github.com/jintomjose/jintomjose.github.io/blob/main/ai-readable.md"
+  }
+}

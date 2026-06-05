@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jintomjose.github.io/sitemap.xml
