@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jinto Jose — Portfolio</title>
+<meta name="description" content="Head of Product · Data OG · AI-Native Builder. Portfolio of projects by Jinto Jose.">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, -apple-system, sans-serif; background: #0a0a0a; color: #e4e4e0; }
+
+  /* TOPBAR */
+  .p4-topbar {
+    background: #0a0a0a;
+    border-bottom: 1px solid #1a1a1a;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .p4-logo { font-size: 15px; font-weight: 800; padding: 16px 0; letter-spacing: -0.03em; margin-right: 8px; color: #f0f0ec; }
+  .p4-tabs { display: flex; gap: 0; flex: 1; }
+  .p4-tab {
+    font-size: 13px; padding: 16px 18px; border: none; background: transparent;
+    color: #555; cursor: pointer; border-bottom: 2px solid transparent;
+    transition: all 0.15s; white-space: nowrap;
+  }
+  .p4-tab:hover { color: #ccc; }
+  .p4-tab.active { color: #fff; border-bottom-color: #fff; font-weight: 600; }
+  .p4-topbar-right { display: flex; gap: 16px; margin-left: auto; align-items: center; }
+  .p4-topbar-link { font-size: 12px; color: #555; text-decoration: none; transition: color 0.15s; }
+  .p4-topbar-link:hover { color: #ccc; }
+
+  /* HERO */
+  .p4-hero {
+    background: #0a0a0a;
+    color: #e4e4e0;
+    padding: 64px 48px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 48px;
+    border-bottom: 1px solid #1a1a1a;
+  }
+  .p4-hero-left { max-width: 520px; }
+  .p4-hero-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: #555; margin-bottom: 14px; font-weight: 600; }
+  .p4-hero-h1 { font-size: 44px; font-weight: 700; letter-spacing: -0.04em; line-height: 1.1; color: #f0f0ec; }
+  .p4-hero-p { font-size: 15px; color: #777; line-height: 1.6; margin-top: 12px; max-width: 440px; }
+  .p4-hero-arrows { display: flex; gap: 8px; flex-shrink: 0; }
+  .p4-arrow-btn {
+    width: 40px; height: 40px; border-radius: 50%;
+    border: 1px solid #2a2a2a; background: #111;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; color: #888;
+    transition: all 0.15s;
+  }
+  .p4-arrow-btn:hover:not(:disabled) { background: #fff; color: #000; border-color: #fff; }
+  .p4-arrow-btn:disabled { opacity: 0.25; cursor: not-allowed; }
+
+  /* CAROUSEL */
+  .p4-carousel-wrap { padding: 40px 0 16px; overflow: hidden; }
+  .p4-carousel-track {
+    display: flex;
+    gap: 20px;
+    padding-left: 48px;
+    transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+    will-change: transform;
+  }
+
+  /* CARDS */
+  .p4-gcard {
+    flex-shrink: 0;
+    width: 320px;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    min-height: 440px;
+    cursor: default;
+    display: block;
+    text-decoration: none;
+  }
+  .p4-gcard img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center;
+    transition: transform 0.4s ease;
+  }
+  .p4-gcard:hover img { transform: scale(1.05); }
+  .p4-gcard-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 45%, rgba(0,0,0,0.88) 100%);
+  }
+  .p4-gcard-body {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 28px 24px;
+    color: #fff;
+  }
+  .p4-gcard-type {
+    font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.55); margin-bottom: 8px; font-weight: 600;
+  }
+  .p4-gcard-name { font-size: 18px; font-weight: 700; line-height: 1.2; margin-bottom: 8px; letter-spacing: -0.02em; }
+  .p4-gcard-desc {
+    font-size: 13px; color: rgba(255,255,255,0.72); line-height: 1.5; margin-bottom: 14px;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .p4-gcard-stack { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 14px; }
+  .p4-gcard-tag { font-size: 10px; padding: 2px 8px; background: rgba(255,255,255,0.12); border-radius: 4px; color: rgba(255,255,255,0.8); backdrop-filter: blur(4px); }
+  .p4-gcard-links { display: flex; flex-direction: column; gap: 7px; }
+  .p4-gcard-cta {
+    font-size: 12px; color: rgba(255,255,255,0.85); display: flex; align-items: center;
+    gap: 7px; font-weight: 500; text-decoration: none; transition: color 0.15s;
+  }
+  .p4-gcard-cta:hover { color: #fff; }
+  .p4-gcard-cta svg { flex-shrink: 0; transition: transform 0.2s; }
+  .p4-gcard-cta:hover svg { transform: translateX(3px); }
+  .p4-gcard-cta.live { color: #4ade80; }
+  .p4-gcard-cta.live:hover { color: #86efac; }
+  .p4-gcard-cta.dim { color: rgba(255,255,255,0.25); cursor: default; pointer-events: none; }
+
+  /* DOTS */
+  .p4-dots { display: flex; justify-content: center; gap: 6px; padding: 20px 0 48px; }
+  .p4-dot-btn { width: 7px; height: 7px; border-radius: 50%; border: none; background: #2a2a2a; cursor: pointer; padding: 0; transition: background 0.2s; }
+  .p4-dot-btn.active { background: #fff; }
+
+  /* FOOTER */
+  .p4-footer {
+    border-top: 1px solid #1a1a1a;
+    padding: 28px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .p4-footer-name { font-size: 13px; color: #444; }
+  .p4-footer-links { display: flex; gap: 20px; }
+  .p4-footer-link { font-size: 12px; color: #444; text-decoration: none; transition: color 0.15s; }
+  .p4-footer-link:hover { color: #ccc; }
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="p4-topbar">
+  <div class="p4-logo">Jinto Jose</div>
+  <div class="p4-tabs">
+    <button class="p4-tab active" onclick="p4filter('all',this)">All Projects</button>
+    <button class="p4-tab" onclick="p4filter('ai',this)">AI Builds</button>
+    <button class="p4-tab" onclick="p4filter('data',this)">Data Products</button>
+    <button class="p4-tab" onclick="p4filter('web',this)">Web Apps</button>
+    <button class="p4-tab" onclick="p4filter('research',this)">Research</button>
+  </div>
+  <div class="p4-topbar-right">
+    <a class="p4-topbar-link" href="https://github.com/jintomjose" target="_blank">GitHub ↗</a>
+    <a class="p4-topbar-link" href="https://linkedin.com/in/jintojose" target="_blank">LinkedIn ↗</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="p4-hero">
+  <div class="p4-hero-left">
+    <div class="p4-hero-label">Projects · Jinto Jose</div>
+    <h1 class="p4-hero-h1">Data OG. Product Head.<br>Now shipping AI.</h1>
+    <p class="p4-hero-p">A decade in data systems. Years leading product. Now building AI-native applications — because the best PMs eventually ship the thing themselves.</p>
+  </div>
+  <div class="p4-hero-arrows">
+    <button class="p4-arrow-btn" id="p4-prev" onclick="p4scroll(-1)" disabled>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="p4-arrow-btn" id="p4-next" onclick="p4scroll(1)">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- CAROUSEL -->
+<div class="p4-carousel-wrap">
+  <div class="p4-carousel-track" id="p4track">
+
+    <!-- Card 1: Inbox Intelligence -->
+    <div class="p4-gcard" data-cat="ai">
+      <img src="https://images.unsplash.com/photo-1596526131083-e8c633564a12?w=640&q=80" alt="Inbox Intelligence" loading="lazy"/>
+      <div class="p4-gcard-overlay"></div>
+      <div class="p4-gcard-body">
+        <div class="p4-gcard-type">AI · Full-Stack · Building</div>
+        <div class="p4-gcard-name">Inbox Intelligence</div>
+        <div class="p4-gcard-desc">End-to-end AI pipeline — Claude + Gmail APIs + Vercel. Surfaces what actually matters from your inbox.</div>
+        <div class="p4-gcard-stack">
+          <span class="p4-gcard-tag">Claude API</span><span class="p4-gcard-tag">Gmail API</span><span class="p4-gcard-tag">Vercel</span>
+        </div>
+        <div class="p4-gcard-links">
+          <a class="p4-gcard-cta" href="https://github.com/jintomjose/inbox-intelligence" target="_blank">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58v-2.02c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.74-1.33-1.74-1.08-.74.08-.72.08-.72 1.2.08 1.83 1.23 1.83 1.23 1.06 1.82 2.8 1.3 3.48.99.1-.77.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.3.47-2.38 1.23-3.22-.12-.3-.53-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.28-1.23 3.28-1.23.66 1.66.24 2.88.12 3.18.77.84 1.23 1.92 1.23 3.22 0 4.6-2.8 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.3c0 .32.22.7.83.57C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            View on GitHub
+          </a>
+          <a class="p4-gcard-cta live" href="https://inbox-intelligence-testjj.vercel.app/" target="_blank">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            View Live ↗
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2: Banking AI -->
+    <div class="p4-gcard" data-cat="research">
+      <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=640&q=80" alt="Banking AI" loading="lazy"/>
+      <div class="p4-gcard-overlay"></div>
+      <div class="p4-gcard-body">
+        <div class="p4-gcard-type">Research · FinTech · Live</div>
+        <div class="p4-gcard-name">Banking AI Operating Models</div>
+        <div class="p4-gcard-desc">Interactive comparison of AI strategies across ING, DBS, JP Morgan, Emirates NBD, Revolut & BofA.</div>
+        <div class="p4-gcard-stack">
+          <span class="p4-gcard-tag">HTML/JS</span><span class="p4-gcard-tag">Research</span><span class="p4-gcard-tag">FinTech</span>
+        </div>
+        <div class="p4-gcard-links">
+          <a class="p4-gcard-cta" href="https://github.com/jintomjose/banking-ai-comparison" target="_blank">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58v-2.02c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.74-1.33-1.74-1.08-.74.08-.72.08-.72 1.2.08 1.83 1.23 1.83 1.23 1.06 1.82 2.8 1.3 3.48.99.1-.77.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.3.47-2.38 1.23-3.22-.12-.3-.53-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.28-1.23 3.28-1.23.66 1.66.24 2.88.12 3.18.77.84 1.23 1.92 1.23 3.22 0 4.6-2.8 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.3c0 .32.22.7.83.57C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            View on GitHub
+          </a>
+          <a class="p4-gcard-cta live" href="https://banking-ai-comparison.vercel.app/" target="_blank">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            View Live ↗
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3: Encyclical Companion -->
+    <div class="p4-gcard" data-cat="web">
+      <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=640&q=80" alt="Encyclical Companion" loading="lazy"/>
+      <div class="p4-gcard-overlay"></div>
+      <div class="p4-gcard-body">
+        <div class="p4-gcard-type">Web App · Personal · Building</div>
+        <div class="p4-gcard-name">Encyclical Companion</div>
+        <div class="p4-gcard-desc">AI companion for deep reading of papal encyclicals. Timeline, themes, notes, and AI-powered study chat.</div>
+        <div class="p4-gcard-stack">
+          <span class="p4-gcard-tag">Claude</span><span class="p4-gcard-tag">React/Vite</span><span class="p4-gcard-tag">Vercel</span>
+        </div>
+        <div class="p4-gcard-links">
+          <a class="p4-gcard-cta" href="https://github.com/jintomjose/encyclical-companion" target="_blank">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58v-2.02c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.74-1.33-1.74-1.08-.74.08-.72.08-.72 1.2.08 1.83 1.23 1.83 1.23 1.06 1.82 2.8 1.3 3.48.99.1-.77.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.3.47-2.38 1.23-3.22-.12-.3-.53-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.28-1.23 3.28-1.23.66 1.66.24 2.88.12 3.18.77.84 1.23 1.92 1.23 3.22 0 4.6-2.8 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.3c0 .32.22.7.83.57C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            View on GitHub
+          </a>
+          <a class="p4-gcard-cta live" href="https://encyclical-companion.vercel.app/" target="_blank">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            View Live ↗
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4: Value at Risk -->
+    <div class="p4-gcard" data-cat="data">
+      <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=640&q=80" alt="Value at Risk" loading="lazy"/>
+      <div class="p4-gcard-overlay"></div>
+      <div class="p4-gcard-body">
+        <div class="p4-gcard-type">Data Product · Finance</div>
+        <div class="p4-gcard-name">Value at Risk</div>
+        <div class="p4-gcard-desc">Portfolio VaR as a consumable data product — discoverable, addressable, trustworthy, self-describing.</div>
+        <div class="p4-gcard-stack">
+          <span class="p4-gcard-tag">Data Product</span><span class="p4-gcard-tag">Finance</span><span class="p4-gcard-tag">Risk</span>
+        </div>
+        <div class="p4-gcard-links">
+          <a class="p4-gcard-cta" href="https://github.com/jintomjose/DataProduct-Value-At-Risk" target="_blank">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58v-2.02c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.74-1.33-1.74-1.08-.74.08-.72.08-.72 1.2.08 1.83 1.23 1.83 1.23 1.06 1.82 2.8 1.3 3.48.99.1-.77.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.3.47-2.38 1.23-3.22-.12-.3-.53-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.28-1.23 3.28-1.23.66 1.66.24 2.88.12 3.18.77.84 1.23 1.92 1.23 3.22 0 4.6-2.8 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.3c0 .32.22.7.83.57C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            View on GitHub
+          </a>
+          <a class="p4-gcard-cta dim">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            No live deploy
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 5: Daily PnL -->
+    <div class="p4-gcard" data-cat="data">
+      <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?w=640&q=80" alt="Daily PnL" loading="lazy"/>
+      <div class="p4-gcard-overlay"></div>
+      <div class="p4-gcard-body">
+        <div class="p4-gcard-type">Data Product · Finance · Private</div>
+        <div class="p4-gcard-name">Daily PnL</div>
+        <div class="p4-gcard-desc">Real-time profit & loss as a self-describing data asset. Built for financial decision-makers, not analysts.</div>
+        <div class="p4-gcard-stack">
+          <span class="p4-gcard-tag">Data Product</span><span class="p4-gcard-tag">Analytics</span>
+        </div>
+        <div class="p4-gcard-links">
+          <a class="p4-gcard-cta dim">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58v-2.02c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.74-1.33-1.74-1.08-.74.08-.72.08-.72 1.2.08 1.83 1.23 1.83 1.23 1.06 1.82 2.8 1.3 3.48.99.1-.77.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.3.47-2.38 1.23-3.22-.12-.3-.53-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.28-1.23 3.28-1.23.66 1.66.24 2.88.12 3.18.77.84 1.23 1.92 1.23 3.22 0 4.6-2.8 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.3c0 .32.22.7.83.57C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            Private repo
+          </a>
+          <a class="p4-gcard-cta dim">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            No live deploy
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 6: Innovation Index -->
+    <div class="p4-gcard" data-cat="data">
+      <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=640&q=80" alt="Innovation Index" loading="lazy"/>
+      <div class="p4-gcard-overlay"></div>
+      <div class="p4-gcard-body">
+        <div class="p4-gcard-type">Data Product · Org Intelligence</div>
+        <div class="p4-gcard-name">Innovation Index</div>
+        <div class="p4-gcard-desc">Turns "are we innovative?" into a measurable Product Owner KPI. Engineering culture as a data product.</div>
+        <div class="p4-gcard-stack">
+          <span class="p4-gcard-tag">Data Product</span><span class="p4-gcard-tag">PO KPIs</span>
+        </div>
+        <div class="p4-gcard-links">
+          <a class="p4-gcard-cta" href="https://github.com/jintomjose/DataProduct-Innovation-Index-4-DevTeams" target="_blank">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58v-2.02c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.74-1.33-1.74-1.08-.74.08-.72.08-.72 1.2.08 1.83 1.23 1.83 1.23 1.06 1.82 2.8 1.3 3.48.99.1-.77.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.3.47-2.38 1.23-3.22-.12-.3-.53-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.28-1.23 3.28-1.23.66 1.66.24 2.88.12 3.18.77.84 1.23 1.92 1.23 3.22 0 4.6-2.8 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.3c0 .32.22.7.83.57C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            View on GitHub
+          </a>
+          <a class="p4-gcard-cta dim">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            No live deploy
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 7: Momentum -->
+    <div class="p4-gcard" data-cat="web">
+      <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=640&q=80" alt="Momentum" loading="lazy"/>
+      <div class="p4-gcard-overlay"></div>
+      <div class="p4-gcard-body">
+        <div class="p4-gcard-type">Web App · Productivity</div>
+        <div class="p4-gcard-name">Momentum</div>
+        <div class="p4-gcard-desc">Habit tracker with one rule: only 3 habits. Constraint as product design for the over-optimised.</div>
+        <div class="p4-gcard-stack">
+          <span class="p4-gcard-tag">Web App</span><span class="p4-gcard-tag">Habits</span>
+        </div>
+        <div class="p4-gcard-links">
+          <a class="p4-gcard-cta" href="https://github.com/jintomjose/WebApp-momentum.app" target="_blank">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58v-2.02c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.74-1.33-1.74-1.08-.74.08-.72.08-.72 1.2.08 1.83 1.23 1.83 1.23 1.06 1.82 2.8 1.3 3.48.99.1-.77.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.3.47-2.38 1.23-3.22-.12-.3-.53-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.28-1.23 3.28-1.23.66 1.66.24 2.88.12 3.18.77.84 1.23 1.92 1.23 3.22 0 4.6-2.8 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.3c0 .32.22.7.83.57C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            View on GitHub
+          </a>
+          <a class="p4-gcard-cta dim">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            Live — coming soon
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 8: Annu's Cakes -->
+    <div class="p4-gcard" data-cat="web">
+      <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=640&q=80" alt="Annus Cakes" loading="lazy"/>
+      <div class="p4-gcard-overlay"></div>
+      <div class="p4-gcard-body">
+        <div class="p4-gcard-type">Web App · E-Commerce · Personal</div>
+        <div class="p4-gcard-name">Annu's Cakes</div>
+        <div class="p4-gcard-desc">E-commerce site for a home baker. Real product problem, real user, real delivery. Also — it's for family.</div>
+        <div class="p4-gcard-stack">
+          <span class="p4-gcard-tag">Web App</span><span class="p4-gcard-tag">E-commerce</span>
+        </div>
+        <div class="p4-gcard-links">
+          <a class="p4-gcard-cta" href="https://github.com/jintomjose/WebApp-Annus-cakes.app" target="_blank">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58v-2.02c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.74-1.33-1.74-1.08-.74.08-.72.08-.72 1.2.08 1.83 1.23 1.83 1.23 1.06 1.82 2.8 1.3 3.48.99.1-.77.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.3.47-2.38 1.23-3.22-.12-.3-.53-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.28-1.23 3.28-1.23.66 1.66.24 2.88.12 3.18.77.84 1.23 1.92 1.23 3.22 0 4.6-2.8 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.3c0 .32.22.7.83.57C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            View on GitHub
+          </a>
+          <a class="p4-gcard-cta dim">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            Live — coming soon
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- DOTS -->
+<div class="p4-dots" id="p4dots"></div>
+
+<!-- FOOTER -->
+<div class="p4-footer">
+  <div class="p4-footer-name">© 2026 Jinto Jose</div>
+  <div class="p4-footer-links">
+    <a class="p4-footer-link" href="https://github.com/jintomjose" target="_blank">GitHub</a>
+    <a class="p4-footer-link" href="https://linkedin.com/in/jintojose" target="_blank">LinkedIn</a>
+  </div>
+</div>
+
+<script>
+let p4idx = 0;
+
+function p4getCards() {
+  return Array.from(document.querySelectorAll('#p4track .p4-gcard'))
+    .filter(c => c.style.display !== 'none');
+}
+
+function p4cardWidth() { return 320 + 20; }
+
+function p4update() {
+  const track = document.getElementById('p4track');
+  track.style.transform = `translateX(-${p4idx * p4cardWidth()}px)`;
+  document.getElementById('p4-prev').disabled = p4idx === 0;
+  const cards = p4getCards();
+  document.getElementById('p4-next').disabled = p4idx >= cards.length - 3;
+  document.querySelectorAll('.p4-dot-btn').forEach((d, i) => {
+    d.classList.toggle('active', i === p4idx);
+  });
+}
+
+function p4scroll(dir) {
+  const cards = p4getCards();
+  p4idx = Math.max(0, Math.min(p4idx + dir, cards.length - 1));
+  p4update();
+}
+
+function p4initDots() {
+  const cards = p4getCards();
+  const dotsEl = document.getElementById('p4dots');
+  dotsEl.innerHTML = '';
+  cards.forEach((_, i) => {
+    const d = document.createElement('button');
+    d.className = 'p4-dot-btn' + (i === 0 ? ' active' : '');
+    d.setAttribute('aria-label', `Go to project ${i + 1}`);
+    d.onclick = () => { p4idx = i; p4update(); };
+    dotsEl.appendChild(d);
+  });
+  p4idx = 0;
+  p4update();
+}
+
+function p4filter(cat, btn) {
+  document.querySelectorAll('.p4-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('#p4track .p4-gcard').forEach(c => {
+    c.style.display = (cat === 'all' || c.dataset.cat === cat) ? 'block' : 'none';
+  });
+  p4idx = 0;
+  setTimeout(p4initDots, 10);
+}
+
+document.addEventListener('DOMContentLoaded', p4initDots);
+</script>
+</body>
+</html>
