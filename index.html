@@ -136,6 +136,29 @@
   .p4-footer-links { display: flex; gap: 20px; }
   .p4-footer-link { font-size: 12px; color: #444; text-decoration: none; transition: color 0.15s; }
   .p4-footer-link:hover { color: #ccc; }
+
+  /* ABOUT PANEL */
+  .about-panel { display: none; padding: 80px 48px; max-width: 860px; }
+  .about-panel.visible { display: block; }
+  .about-kicker { font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: #555; font-weight: 600; margin-bottom: 20px; }
+  .about-name { font-size: 52px; font-weight: 800; letter-spacing: -0.04em; color: #f0f0ec; line-height: 1; margin-bottom: 8px; }
+  .about-title { font-size: 18px; color: #555; font-weight: 400; margin-bottom: 40px; letter-spacing: -0.01em; }
+  .about-divider { width: 40px; height: 2px; background: #2a2a2a; margin-bottom: 40px; }
+  .about-bio { font-size: 17px; color: #888; line-height: 1.75; max-width: 620px; margin-bottom: 20px; }
+  .about-bio strong { color: #ccc; font-weight: 600; }
+  .about-links { display: flex; gap: 12px; margin-top: 48px; flex-wrap: wrap; }
+  .about-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 20px; border-radius: 8px; font-size: 13px; font-weight: 600;
+    text-decoration: none; transition: all 0.15s; letter-spacing: -0.01em;
+  }
+  .about-link.primary { background: #f0f0ec; color: #0a0a0a; }
+  .about-link.primary:hover { background: #fff; }
+  .about-link.secondary { background: #141414; color: #888; border: 1px solid #222; }
+  .about-link.secondary:hover { border-color: #444; color: #ccc; }
+  .about-stats { display: flex; gap: 40px; margin-top: 56px; padding-top: 40px; border-top: 1px solid #1a1a1a; }
+  .about-stat-n { font-size: 36px; font-weight: 800; color: #f0f0ec; letter-spacing: -0.04em; line-height: 1; }
+  .about-stat-l { font-size: 12px; color: #444; margin-top: 6px; text-transform: uppercase; letter-spacing: 0.08em; }
 </style>
 </head>
 <body>
@@ -149,6 +172,7 @@
     <button class="p4-tab" onclick="p4filter('data',this)">Data Products</button>
     <button class="p4-tab" onclick="p4filter('web',this)">Web Apps</button>
     <button class="p4-tab" onclick="p4filter('research',this)">Research</button>
+    <button class="p4-tab" onclick="showAbout(this)">About Jinto</button>
   </div>
   <div class="p4-topbar-right">
     <a class="p4-topbar-link" href="https://github.com/jintomjose" target="_blank">GitHub ↗</a>
@@ -383,6 +407,54 @@
 <!-- DOTS -->
 <div class="p4-dots" id="p4dots"></div>
 
+<!-- ABOUT PANEL -->
+<div class="about-panel" id="aboutPanel">
+  <div class="about-kicker">Head of Product · Dubai · 2026</div>
+  <div class="about-name">Jinto Jose</div>
+  <div class="about-title">Head of Product &nbsp;·&nbsp; Data Domain &nbsp;·&nbsp; AI-Native Builder</div>
+  <div class="about-divider"></div>
+
+  <p class="about-bio">
+    I spent <strong>over a decade in the data domain</strong> — architecting pipelines, building financial data systems, and turning raw data into decisions. That gave me something most product people don't have: I think in systems, not features.
+  </p>
+  <p class="about-bio">
+    From there I moved into <strong>product leadership</strong> — leading teams, shipping roadmaps, and bridging the gap between data intelligence and business outcomes across financial institutions and enterprise organisations.
+  </p>
+  <p class="about-bio">
+    Now I'm in a third chapter: <strong>building AI-native applications</strong> from scratch. Claude API, Vercel, GitHub — the stack that makes a product person genuinely dangerous. I'm not just speccing products for engineers anymore. I'm shipping them myself.
+  </p>
+
+  <div class="about-links">
+    <a class="about-link primary" href="https://github.com/jintomjose" target="_blank">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58v-2.02c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.74-1.33-1.74-1.08-.74.08-.72.08-.72 1.2.08 1.83 1.23 1.83 1.23 1.06 1.82 2.8 1.3 3.48.99.1-.77.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.3.47-2.38 1.23-3.22-.12-.3-.53-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.28-1.23 3.28-1.23.66 1.66.24 2.88.12 3.18.77.84 1.23 1.92 1.23 3.22 0 4.6-2.8 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.3c0 .32.22.7.83.57C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+      View GitHub
+    </a>
+    <a class="about-link secondary" href="https://www.linkedin.com/in/jintojose" target="_blank">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      Connect on LinkedIn
+    </a>
+  </div>
+
+  <div class="about-stats">
+    <div>
+      <div class="about-stat-n">10+</div>
+      <div class="about-stat-l">Years in Data</div>
+    </div>
+    <div>
+      <div class="about-stat-n">4</div>
+      <div class="about-stat-l">Active Builds</div>
+    </div>
+    <div>
+      <div class="about-stat-n">3</div>
+      <div class="about-stat-l">Domains</div>
+    </div>
+    <div>
+      <div class="about-stat-n">11</div>
+      <div class="about-stat-l">Projects</div>
+    </div>
+  </div>
+</div>
+
 <!-- FOOTER -->
 <div class="p4-footer">
   <div class="p4-footer-name">© 2026 Jinto Jose</div>
@@ -434,7 +506,24 @@ function p4initDots() {
   p4update();
 }
 
+function showProjectView() {
+  document.getElementById('aboutPanel').classList.remove('visible');
+  document.querySelector('.p4-hero').style.display = '';
+  document.querySelector('.p4-carousel-wrap').style.display = '';
+  document.getElementById('p4dots').style.display = '';
+}
+
+function showAbout(btn) {
+  document.querySelectorAll('.p4-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelector('.p4-hero').style.display = 'none';
+  document.querySelector('.p4-carousel-wrap').style.display = 'none';
+  document.getElementById('p4dots').style.display = 'none';
+  document.getElementById('aboutPanel').classList.add('visible');
+}
+
 function p4filter(cat, btn) {
+  showProjectView();
   document.querySelectorAll('.p4-tab').forEach(t => t.classList.remove('active'));
   btn.classList.add('active');
   document.querySelectorAll('#p4track .p4-gcard').forEach(c => {
