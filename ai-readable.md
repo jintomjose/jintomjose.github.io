@@ -136,7 +136,7 @@ Jinto Jose is a Head of Product with over a decade of experience in the data dom
 | Status | Live |
 | Domain | Productivity · Habit Design |
 | GitHub | https://github.com/jintomjose/WebApp-momentum.app |
-| Live | https://momentum-3df5dd58.base44.app/home |
+| Live | https://momentum-2-change.vercel.app/home |
 | Instagram | https://www.instagram.com/momentum.app.3 |
 | Stack | Web App · Base44 |
 | Description | Habit tracker built on one constraint: only 3 habits. Opinionated product design for the over-optimised. Focus through limitation. |
@@ -216,7 +216,7 @@ Jinto Jose is a Head of Product with over a decade of experience in the data dom
 | Inbox Intelligence (live) | https://inbox-intelligence-testjj.vercel.app/ |
 | Banking AI Comparison (live) | https://banking-ai-comparison.vercel.app/ |
 | Encyclical Companion (live) | https://encyclical-companion.vercel.app/ |
-| Momentum (live) | https://momentum-3df5dd58.base44.app/home |
+| Momentum (live) | https://momentum-2-change.vercel.app/home |
 | Momentum (Instagram) | https://www.instagram.com/momentum.app.3 |
 | ReginaCaeliCreations (live) | https://annus-cakes-0eadb5fc.base44.app |
 | ReginaCaeliCreations (Instagram) | https://www.instagram.com/ReginaCaeliCreations |

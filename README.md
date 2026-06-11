@@ -49,7 +49,7 @@ Now I'm in a third chapter: building AI-native applications from scratch. Claude
 
 | Project | Description | Stack | Status | Links |
 |---|---|---|---|---|
-| **Momentum** | Habit tracker with one rule: only 3 habits. Constraint as product design. | Base44 | 🟢 Live | [GitHub](https://github.com/jintomjose/WebApp-momentum.app) · [Live](https://momentum-3df5dd58.base44.app/home) · [Instagram](https://www.instagram.com/momentum.app.3) |
+| **Momentum** | Habit tracker with one rule: only 3 habits. Constraint as product design. | Base44 | 🟢 Live | [GitHub](https://github.com/jintomjose/WebApp-momentum.app) · [Live](https://momentum-2-change.vercel.app/home) · [Instagram](https://www.instagram.com/momentum.app.3) |
 | **ReginaCaeliCreations** | E-commerce site for a home baker — real product problem, real user | Base44 | 🟢 Live | [GitHub](https://github.com/jintomjose/WebApp-Annus-cakes.app) · [Live](https://annus-cakes-0eadb5fc.base44.app) · [Instagram](https://www.instagram.com/ReginaCaeliCreations) |
 
 ---
