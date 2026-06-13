@@ -2,8 +2,8 @@
   "person": {
     "name": "Jinto Jose",
     "title": "Head of Product",
-    "location": "Dubai, UAE",
-    "summary": "Head of Product with 10+ years in the data domain. Specialist in data product design, financial data systems, and AI-native application development. Now building full-stack AI applications with Claude API, Vercel, and GitHub.",
+    "location": "Netherlands",
+    "summary": "Head of Product with 13+ years in the data domain. Specialist in data product design, financial data systems, and AI-native application development. Now building full-stack AI applications with Claude API, Vercel, and GitHub.",
     "urls": {
       "portfolio": "https://jintomjose.github.io",
       "github": "https://github.com/jintomjose",
@@ -109,17 +109,32 @@
       "urls": {}
     },
     {
+      "id": "notio-spiritus",
+      "name": "Notio Spiritus",
+      "type": "App Studio",
+      "category": "web",
+      "status": "live",
+      "description": "Independent app studio building EU-hosted, privacy-first products that respect your time and your data. Umbrella for Momentum and future apps.",
+      "stack": ["Vercel", "Studio"],
+      "domain": "App Studio / Netherlands",
+      "urls": {
+        "live": "https://notiospiritus.org",
+        "instagram": "https://www.instagram.com/notio.spiritus"
+      }
+    },
+    {
       "id": "momentum",
       "name": "Momentum",
       "type": "Web Application",
       "category": "web",
       "status": "live",
-      "description": "Habit tracker built on one opinionated constraint: only 3 habits. Designed around the principle that focus requires limitation. Product thinking applied to behaviour design.",
-      "stack": ["Web App", "Base44"],
+      "description": "Habit tracker built on one opinionated constraint: only 3 habits. Migrated off Base44 to a fully-owned stack (React, Supabase, Vercel) - installable PWA with an autonomous activation agent. A Notio Spiritus product.",
+      "stack": ["React", "Supabase", "Vercel", "PWA", "Capacitor"],
       "domain": "Productivity / Habit Design",
+      "studio": "Notio Spiritus",
       "urls": {
         "github": "https://github.com/jintomjose/WebApp-momentum.app",
-        "live": "https://momentum-2-change.vercel.app/home",
+        "live": "https://momentum-2-change.com",
         "instagram": "https://www.instagram.com/momentum.app.3"
       }
     },
@@ -164,11 +179,11 @@
     }
   ],
   "meta": {
-    "generated": "2026-06-05",
-    "total_projects": 11,
-    "live_deployments": 5,
+    "generated": "2026-06-14",
+    "total_projects": 12,
+    "live_deployments": 6,
     "active_builds": 4,
-    "years_in_data": "10+",
+    "years_in_data": "13+",
     "source": "https://jintomjose.github.io",
     "ai_readable": "https://github.com/jintomjose/jintomjose.github.io/blob/main/ai-readable.md"
   }

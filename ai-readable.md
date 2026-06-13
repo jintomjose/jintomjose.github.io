@@ -10,7 +10,7 @@
 |---|---|
 | Name | Jinto Jose |
 | Role | Head of Product |
-| Location | Dubai, UAE |
+| Location | Netherlands |
 | GitHub | https://github.com/jintomjose |
 | Portfolio | https://jintomjose.github.io |
 | LinkedIn | https://www.linkedin.com/in/jintojose |
@@ -22,7 +22,7 @@
 Jinto Jose is a Head of Product with over a decade of experience in the data domain. He has architected data pipelines, built financial data systems, and designed data products for enterprise and financial institutions. He moved from data architecture into product leadership — leading teams, shipping roadmaps, and connecting data intelligence to business outcomes. He is now building AI-native full-stack web applications using Claude API, Vercel, and GitHub.
 
 **Three-era career arc:**
-1. **Data Domain (10+ years)** — Data architecture, pipelines, financial data systems. Specialist in data product thinking: discoverable, addressable, trustworthy, self-describing.
+1. **Data Domain (13+ years)** — Data architecture, pipelines, financial data systems. Specialist in data product thinking: discoverable, addressable, trustworthy, self-describing.
 2. **Product Leadership** — Head of Product for data-intensive organisations. Built product culture, shipped roadmaps, connected data layer to business outcomes.
 3. **AI-Native Builder (2025–present)** — Building full-stack AI applications from scratch. Stack: Claude API, React/Vite, Next.js, Vercel, GitHub.
 
@@ -129,17 +129,30 @@ Jinto Jose is a Head of Product with over a decade of experience in the data dom
 
 ---
 
+### Notio Spiritus — App Studio
+| Field | Value |
+|---|---|
+| Type | Independent App Studio |
+| Status | Live |
+| Domain | Consumer Apps · Netherlands |
+| Live | https://notiospiritus.org |
+| Instagram | https://www.instagram.com/notio.spiritus |
+| Description | Independent app studio building EU-hosted, privacy-first products that respect your time and your data. Umbrella for Momentum and future apps. |
+
+---
+
 ### 7. Momentum
 | Field | Value |
 |---|---|
 | Type | Web Application |
 | Status | Live |
 | Domain | Productivity · Habit Design |
+| Studio | Notio Spiritus |
 | GitHub | https://github.com/jintomjose/WebApp-momentum.app |
-| Live | https://momentum-2-change.vercel.app/home |
+| Live | https://momentum-2-change.com |
 | Instagram | https://www.instagram.com/momentum.app.3 |
-| Stack | Web App · Base44 |
-| Description | Habit tracker built on one constraint: only 3 habits. Opinionated product design for the over-optimised. Focus through limitation. |
+| Stack | React · Supabase · Vercel · PWA · Capacitor |
+| Description | Habit tracker built on one constraint: only 3 habits. Migrated off Base44 to a fully-owned stack — installable PWA, autonomous activation agent, EU-hosted. A Notio Spiritus product. |
 
 ---
 
@@ -198,10 +211,10 @@ Jinto Jose is a Head of Product with over a decade of experience in the data dom
 
 | Metric | Value |
 |---|---|
-| Years in Data Domain | 10+ |
+| Years in Data Domain | 13+ |
 | Active Builds | 4 |
-| Total Projects | 11 |
-| Live Deployments | 5 |
+| Total Projects | 12 |
+| Live Deployments | 6 |
 | Domains | 3 (Finance · AI/Web · Product Intelligence) |
 
 ---
@@ -216,7 +229,9 @@ Jinto Jose is a Head of Product with over a decade of experience in the data dom
 | Inbox Intelligence (live) | https://inbox-intelligence-testjj.vercel.app/ |
 | Banking AI Comparison (live) | https://banking-ai-comparison.vercel.app/ |
 | Encyclical Companion (live) | https://encyclical-companion.vercel.app/ |
-| Momentum (live) | https://momentum-2-change.vercel.app/home |
+| Notio Spiritus (studio, live) | https://notiospiritus.org |
+| Notio Spiritus (Instagram) | https://www.instagram.com/notio.spiritus |
+| Momentum (live) | https://momentum-2-change.com |
 | Momentum (Instagram) | https://www.instagram.com/momentum.app.3 |
 | ReginaCaeliCreations (live) | https://annus-cakes-0eadb5fc.base44.app |
 | ReginaCaeliCreations (Instagram) | https://www.instagram.com/ReginaCaeliCreations |

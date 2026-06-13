@@ -49,7 +49,8 @@ Now I'm in a third chapter: building AI-native applications from scratch. Claude
 
 | Project | Description | Stack | Status | Links |
 |---|---|---|---|---|
-| **Momentum** | Habit tracker with one rule: only 3 habits. Constraint as product design. | Base44 | 🟢 Live | [GitHub](https://github.com/jintomjose/WebApp-momentum.app) · [Live](https://momentum-2-change.vercel.app/home) · [Instagram](https://www.instagram.com/momentum.app.3) |
+| **Notio Spiritus** | Independent app studio — EU-hosted, privacy-first products. Home of Momentum. | Vercel · Studio | 🟢 Live | [Live](https://notiospiritus.org) · [Instagram](https://www.instagram.com/notio.spiritus) |
+| **Momentum** | Habit tracker with one rule: only 3 habits. Constraint as product design. A Notio Spiritus product. | React · Supabase · Vercel · PWA | 🟢 Live | [GitHub](https://github.com/jintomjose/WebApp-momentum.app) · [Live](https://momentum-2-change.com) · [Instagram](https://www.instagram.com/momentum.app.3) |
 | **ReginaCaeliCreations** | E-commerce site for a home baker — real product problem, real user | Base44 | 🟢 Live | [GitHub](https://github.com/jintomjose/WebApp-Annus-cakes.app) · [Live](https://annus-cakes-0eadb5fc.base44.app) · [Instagram](https://www.instagram.com/ReginaCaeliCreations) |
 
 ---
