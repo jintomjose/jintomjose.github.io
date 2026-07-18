@@ -57,7 +57,7 @@ Jinto Jose is a Head of Product with over a decade of experience in the data dom
 | Type | AI · Full-Stack Application |
 | Status | Building |
 | Domain | AI / Productivity |
-| GitHub | https://github.com/jintomjose/inbox-intelligence |
+| GitHub | Private repository |
 | Live | https://inbox-intelligence-testjj.vercel.app/ |
 | Stack | Claude API · Gmail API · React/Vite · Vercel |
 | Description | End-to-end AI pipeline that surfaces what actually matters from your inbox. Built with Claude API, Gmail API, and deployed on Vercel. Full-stack AI application built from scratch. |
@@ -83,7 +83,7 @@ Jinto Jose is a Head of Product with over a decade of experience in the data dom
 | Type | Web Application |
 | Status | Building |
 | Domain | Personal · AI |
-| GitHub | https://github.com/jintomjose/encyclical-companion |
+| GitHub | Private repository |
 | Live | https://encyclical-companion.vercel.app/ |
 | Stack | Claude API · React/Vite · Vercel |
 | Description | AI-powered companion app for deep reading of Catholic papal encyclicals. Features timeline, themes, personal notes, and AI-powered study chat. |
@@ -148,7 +148,7 @@ Jinto Jose is a Head of Product with over a decade of experience in the data dom
 | Status | Live |
 | Domain | Productivity · Habit Design |
 | Studio | Notio Spiritus |
-| GitHub | https://github.com/jintomjose/WebApp-momentum.app |
+| GitHub | Private repository |
 | Live | https://momentum-2-change.com |
 | Instagram | https://www.instagram.com/momentum.app.3 |
 | Stack | React · Supabase · Vercel · PWA · Capacitor |
@@ -162,11 +162,11 @@ Jinto Jose is a Head of Product with over a decade of experience in the data dom
 | Type | Web Application · E-Commerce |
 | Status | Live |
 | Domain | E-Commerce · Personal |
-| GitHub | https://github.com/jintomjose/WebApp-Annus-cakes.app |
-| Live | https://annus-cakes-0eadb5fc.base44.app |
+| GitHub | https://github.com/jintomjose/ReginaCaeliCreations |
+| Live | https://reginacaelicreations.com |
 | Instagram | https://www.instagram.com/ReginaCaeliCreations |
-| Stack | Web App · Base44 |
-| Description | E-commerce site for a home baker. Real product problem, real user, real delivery. |
+| Stack | Web App · E-commerce · Vercel |
+| Description | E-commerce site for a home baker — rum-soaked Christmas plum cake, home-baked in The Hague. Migrated off Base44 to a hand-built static site on its own domain. Real product, real user, and it's family. |
 
 ---
 
@@ -233,5 +233,5 @@ Jinto Jose is a Head of Product with over a decade of experience in the data dom
 | Notio Spiritus (Instagram) | https://www.instagram.com/notio.spiritus |
 | Momentum (live) | https://momentum-2-change.com |
 | Momentum (Instagram) | https://www.instagram.com/momentum.app.3 |
-| ReginaCaeliCreations (live) | https://annus-cakes-0eadb5fc.base44.app |
+| ReginaCaeliCreations (live) | https://reginacaelicreations.com |
 | ReginaCaeliCreations (Instagram) | https://www.instagram.com/ReginaCaeliCreations |

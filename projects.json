@@ -26,7 +26,6 @@
       "stack": ["Claude API", "Gmail API", "React", "Vite", "Vercel"],
       "domain": "AI / Productivity",
       "urls": {
-        "github": "https://github.com/jintomjose/inbox-intelligence",
         "live": "https://inbox-intelligence-testjj.vercel.app/"
       }
     },
@@ -54,7 +53,6 @@
       "stack": ["Claude API", "React", "Vite", "Vercel"],
       "domain": "Personal / AI",
       "urls": {
-        "github": "https://github.com/jintomjose/encyclical-companion",
         "live": "https://encyclical-companion.vercel.app/"
       }
     },
@@ -133,7 +131,6 @@
       "domain": "Productivity / Habit Design",
       "studio": "Notio Spiritus",
       "urls": {
-        "github": "https://github.com/jintomjose/WebApp-momentum.app",
         "live": "https://momentum-2-change.com",
         "instagram": "https://www.instagram.com/momentum.app.3"
       }
@@ -144,12 +141,12 @@
       "type": "Web Application",
       "category": "web",
       "status": "live",
-      "description": "E-commerce site for a home baker. Real product problem, real user, real delivery.",
-      "stack": ["Web App", "Base44"],
+      "description": "E-commerce site for a home baker — rum-soaked Christmas plum cake, home-baked in The Hague. Migrated off Base44 to a hand-built static site on its own domain. Real product, real user, and it's family.",
+      "stack": ["Web App", "E-commerce", "Vercel"],
       "domain": "E-Commerce / Personal",
       "urls": {
-        "github": "https://github.com/jintomjose/WebApp-Annus-cakes.app",
-        "live": "https://annus-cakes-0eadb5fc.base44.app",
+        "github": "https://github.com/jintomjose/ReginaCaeliCreations",
+        "live": "https://reginacaelicreations.com",
         "instagram": "https://www.instagram.com/ReginaCaeliCreations"
       }
     },

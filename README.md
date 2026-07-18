@@ -22,8 +22,8 @@ Now I'm in a third chapter: building AI-native applications from scratch. Claude
 
 | Project | Description | Stack | Status | Links |
 |---|---|---|---|---|
-| **Inbox Intelligence** | End-to-end AI pipeline that surfaces what matters from your inbox | Claude API · Gmail API · Vercel | 🟡 Building | [GitHub](https://github.com/jintomjose/inbox-intelligence) · [Live](https://inbox-intelligence-testjj.vercel.app/) |
-| **Encyclical Companion** | AI companion for deep reading of papal encyclicals — timeline, themes, study chat | Claude API · React/Vite · Vercel | 🟡 Building | [GitHub](https://github.com/jintomjose/encyclical-companion) · [Live](https://encyclical-companion.vercel.app/) |
+| **Inbox Intelligence** | End-to-end AI pipeline that surfaces what matters from your inbox | Claude API · Gmail API · Vercel | 🟡 Building | Private · [Live](https://inbox-intelligence-testjj.vercel.app/) |
+| **Encyclical Companion** | AI companion for deep reading of papal encyclicals — timeline, themes, study chat | Claude API · React/Vite · Vercel | 🟡 Building | Private · [Live](https://encyclical-companion.vercel.app/) |
 
 ### Research & Analysis
 
@@ -50,8 +50,8 @@ Now I'm in a third chapter: building AI-native applications from scratch. Claude
 | Project | Description | Stack | Status | Links |
 |---|---|---|---|---|
 | **Notio Spiritus** | Independent app studio — EU-hosted, privacy-first products. Home of Momentum. | Vercel · Studio | 🟢 Live | [Live](https://notiospiritus.org) · [Instagram](https://www.instagram.com/notio.spiritus) |
-| **Momentum** | Habit tracker with one rule: only 3 habits. Constraint as product design. A Notio Spiritus product. | React · Supabase · Vercel · PWA | 🟢 Live | [GitHub](https://github.com/jintomjose/WebApp-momentum.app) · [Live](https://momentum-2-change.com) · [Instagram](https://www.instagram.com/momentum.app.3) |
-| **ReginaCaeliCreations** | E-commerce site for a home baker — real product problem, real user | Base44 | 🟢 Live | [GitHub](https://github.com/jintomjose/WebApp-Annus-cakes.app) · [Live](https://annus-cakes-0eadb5fc.base44.app) · [Instagram](https://www.instagram.com/ReginaCaeliCreations) |
+| **Momentum** | Habit tracker with one rule: only 3 habits. Constraint as product design. A Notio Spiritus product. | React · Supabase · Vercel · PWA | 🟢 Live | Private · [Live](https://momentum-2-change.com) · [Instagram](https://www.instagram.com/momentum.app.3) |
+| **ReginaCaeliCreations** | E-commerce site for a home baker — rum-soaked Christmas plum cake, home-baked in The Hague | Web App · Vercel | 🟢 Live | [GitHub](https://github.com/jintomjose/ReginaCaeliCreations) · [Live](https://reginacaelicreations.com) · [Instagram](https://www.instagram.com/ReginaCaeliCreations) |
 
 ---
 
