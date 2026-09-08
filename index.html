@@ -89,7 +89,7 @@
             "@type": "SoftwareApplication",
             "name": "Encyclical Companion",
             "description": "AI-powered companion app for deep reading of papal encyclicals. Features timeline, themes, notes, and AI-powered study chat.",
-            "applicationCategory": "Web Application",
+            "applicationCategory": "AI Application",
             "operatingSystem": "Web",
             "url": "https://encyclical-companion.vercel.app/",
             "author": { "@id": "https://jintomjose.github.io/#person" }
@@ -141,6 +141,45 @@
             "name": "Innovation Index for Dev Teams",
             "description": "Turns 'are we innovative?' into a measurable Product Owner KPI. Engineering culture as a data product.",
             "codeRepository": "https://github.com/jintomjose/DataProduct-Innovation-Index-4-DevTeams",
+            "author": { "@id": "https://jintomjose.github.io/#person" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "Vita",
+            "description": "Personal health tracker with a chat-first input port — plain sentences are parsed into structured data, then shown back as rings, trends and streaks.",
+            "applicationCategory": "AI Application",
+            "operatingSystem": "Web",
+            "url": "https://vita-alpha-three.vercel.app",
+            "author": { "@id": "https://jintomjose.github.io/#person" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "Womb Prayer Prep",
+            "description": "Mobile-first PWA for a 280-day womb-prayer journey — a Malayalam devotional book transcribed and translated to English, fully bilingual, shared by two parents.",
+            "applicationCategory": "Web Application",
+            "operatingSystem": "Web",
+            "url": "https://womb-prayer.web.app",
+            "author": { "@id": "https://jintomjose.github.io/#person" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "Kids Crossword Puzzle",
+            "description": "Trilingual crossword game for a family of three kids — English, Dutch and Malayalam, with difficulty tiers, image-and-audio clues, and a local leaderboard.",
+            "applicationCategory": "GameApplication",
+            "operatingSystem": "Web",
+            "url": "https://kids-crossword-puzzle.vercel.app",
             "author": { "@id": "https://jintomjose.github.io/#person" }
           }
         }
@@ -342,8 +381,8 @@
   <div class="p4-tabs">
     <button class="p4-tab active" onclick="p4filter('all',this)">All Projects</button>
     <button class="p4-tab" onclick="p4filter('ai',this)">AI Builds</button>
+    <button class="p4-tab" onclick="p4filter('web',this)">Apps</button>
     <button class="p4-tab" onclick="p4filter('data',this)">Data Products</button>
-    <button class="p4-tab" onclick="p4filter('web',this)">Web Apps</button>
     <button class="p4-tab" onclick="p4filter('research',this)">Research</button>
     <button class="p4-tab" onclick="showAbout(this)">About Jinto</button>
   </div>
@@ -421,11 +460,11 @@
     </div>
 
     <!-- Encyclical Companion -->
-    <div class="p4-gcard" data-cat="web">
+    <div class="p4-gcard" data-cat="ai">
       <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=640&q=80" alt="Encyclical Companion" loading="lazy"/>
       <div class="p4-gcard-overlay"></div>
       <div class="p4-gcard-body">
-        <div class="p4-gcard-type">Web App · Personal · Building</div>
+        <div class="p4-gcard-type">AI · Personal · Live</div>
         <div class="p4-gcard-name">Encyclical Companion</div>
         <div class="p4-gcard-desc">AI companion for deep reading of papal encyclicals. Timeline, themes, notes, and AI-powered study chat.</div>
         <div class="p4-gcard-stack">
@@ -435,6 +474,30 @@
           <a class="p4-gcard-cta live" href="https://encyclical-companion.vercel.app/" target="_blank">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
             View Live ↗
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vita -->
+    <div class="p4-gcard" data-cat="ai">
+      <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=640&q=80" alt="Vita" loading="lazy"/>
+      <div class="p4-gcard-overlay"></div>
+      <div class="p4-gcard-body">
+        <div class="p4-gcard-type">AI · Health · Live (MVP)</div>
+        <div class="p4-gcard-name">Vita</div>
+        <div class="p4-gcard-desc">Personal health tracker with a chat-first input port — "slept 5h, 8k steps" is parsed into structured data, then shown back as rings, trends and streaks.</div>
+        <div class="p4-gcard-stack">
+          <span class="p4-gcard-tag">Next.js</span><span class="p4-gcard-tag">Neon/Drizzle</span><span class="p4-gcard-tag">Auth.js</span><span class="p4-gcard-tag">Vercel</span>
+        </div>
+        <div class="p4-gcard-links">
+          <a class="p4-gcard-cta live" href="https://vita-alpha-three.vercel.app" target="_blank">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            View Live ↗
+          </a>
+          <a class="p4-gcard-cta dim">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58v-2.02c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.74-1.33-1.74-1.08-.74.08-.72.08-.72 1.2.08 1.83 1.23 1.83 1.23 1.06 1.82 2.8 1.3 3.48.99.1-.77.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.3.47-2.38 1.23-3.22-.12-.3-.53-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.28-1.23 3.28-1.23.66 1.66.24 2.88.12 3.18.77.84 1.23 1.92 1.23 3.22 0 4.6-2.8 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.3c0 .32.22.7.83.57C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            Private repo
           </a>
         </div>
       </div>
@@ -588,6 +651,54 @@
       </div>
     </div>
 
+    <!-- Womb Prayer Prep -->
+    <div class="p4-gcard" data-cat="web">
+      <img src="https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=640&q=80" alt="Womb Prayer Prep" loading="lazy"/>
+      <div class="p4-gcard-overlay"></div>
+      <div class="p4-gcard-body">
+        <div class="p4-gcard-type">App · Faith · Live</div>
+        <div class="p4-gcard-name">Womb Prayer Prep</div>
+        <div class="p4-gcard-desc">Mobile-first PWA for a 280-day womb-prayer journey — a Malayalam devotional book transcribed and translated to English, fully bilingual, two parents sharing one journey. Shipped and in use.</div>
+        <div class="p4-gcard-stack">
+          <span class="p4-gcard-tag">React/Vite</span><span class="p4-gcard-tag">TypeScript</span><span class="p4-gcard-tag">Firebase</span><span class="p4-gcard-tag">PWA</span>
+        </div>
+        <div class="p4-gcard-links">
+          <a class="p4-gcard-cta live" href="https://womb-prayer.web.app" target="_blank">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            View Live ↗
+          </a>
+          <a class="p4-gcard-cta dim">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58v-2.02c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.74-1.33-1.74-1.08-.74.08-.72.08-.72 1.2.08 1.83 1.23 1.83 1.23 1.06 1.82 2.8 1.3 3.48.99.1-.77.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.3.47-2.38 1.23-3.22-.12-.3-.53-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.28-1.23 3.28-1.23.66 1.66.24 2.88.12 3.18.77.84 1.23 1.92 1.23 3.22 0 4.6-2.8 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.3c0 .32.22.7.83.57C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            Private repo
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kids Crossword Puzzle -->
+    <div class="p4-gcard" data-cat="web">
+      <img src="https://images.unsplash.com/photo-1499332347742-4946bddc7d94?w=640&q=80" alt="Kids Crossword Puzzle" loading="lazy"/>
+      <div class="p4-gcard-overlay"></div>
+      <div class="p4-gcard-body">
+        <div class="p4-gcard-type">App · Family · Live</div>
+        <div class="p4-gcard-name">Kids Crossword Puzzle</div>
+        <div class="p4-gcard-desc">Trilingual crossword game for a family of three kids — English, Dutch and Malayalam, with difficulty tiers, image-and-audio clues for the youngest, and a simple local leaderboard.</div>
+        <div class="p4-gcard-stack">
+          <span class="p4-gcard-tag">React</span><span class="p4-gcard-tag">Vite</span><span class="p4-gcard-tag">i18n</span>
+        </div>
+        <div class="p4-gcard-links">
+          <a class="p4-gcard-cta live" href="https://kids-crossword-puzzle.vercel.app" target="_blank">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            View Live ↗
+          </a>
+          <a class="p4-gcard-cta dim">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58v-2.02c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.74-1.33-1.74-1.08-.74.08-.72.08-.72 1.2.08 1.83 1.23 1.83 1.23 1.06 1.82 2.8 1.3 3.48.99.1-.77.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.3.47-2.38 1.23-3.22-.12-.3-.53-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.28-1.23 3.28-1.23.66 1.66.24 2.88.12 3.18.77.84 1.23 1.92 1.23 3.22 0 4.6-2.8 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.3c0 .32.22.7.83.57C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            Private repo
+          </a>
+        </div>
+      </div>
+    </div>
+
   </ol>
 </section>
 
@@ -628,16 +739,16 @@
       <div class="about-stat-l">Years in Data</div>
     </div>
     <div>
-      <div class="about-stat-n">4</div>
-      <div class="about-stat-l">Active Builds</div>
-    </div>
-    <div>
-      <div class="about-stat-n">3</div>
-      <div class="about-stat-l">Domains</div>
-    </div>
-    <div>
-      <div class="about-stat-n">11</div>
+      <div class="about-stat-n">15</div>
       <div class="about-stat-l">Projects</div>
+    </div>
+    <div>
+      <div class="about-stat-n">9</div>
+      <div class="about-stat-l">Live Deployments</div>
+    </div>
+    <div>
+      <div class="about-stat-n">4</div>
+      <div class="about-stat-l">Domains</div>
     </div>
   </div>
 </section>

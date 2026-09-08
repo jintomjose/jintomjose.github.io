@@ -18,18 +18,23 @@ Now I'm in a third chapter: building AI-native applications from scratch. Claude
 
 ## Projects
 
-### AI & Full-Stack Applications
+### AI Builds — full-stack AI applications
 
 | Project | Description | Stack | Status | Links |
 |---|---|---|---|---|
 | **Inbox Intelligence** | End-to-end AI pipeline that surfaces what matters from your inbox | Claude API · Gmail API · Vercel | 🟡 Building | Private · [Live](https://inbox-intelligence-testjj.vercel.app/) |
-| **Encyclical Companion** | AI companion for deep reading of papal encyclicals — timeline, themes, study chat | Claude API · React/Vite · Vercel | 🟡 Building | Private · [Live](https://encyclical-companion.vercel.app/) |
+| **Encyclical Companion** | AI companion for deep reading of papal encyclicals — timeline, themes, study chat | Claude API · React/Vite · Vercel | 🟢 Live | Private · [Live](https://encyclical-companion.vercel.app/) |
+| **Vita** | Personal health tracker — a chat-first input port parses plain sentences into structured data; swipeable dashboard of rings, trends and streaks | Next.js · Neon · Drizzle · Auth.js · Vercel | 🟢 Live (MVP) | Private · [Live](https://vita-alpha-three.vercel.app) |
 
-### Research & Analysis
+### Apps — shipped products, real users
 
 | Project | Description | Stack | Status | Links |
 |---|---|---|---|---|
-| **Banking AI Operating Models** | Interactive comparison of AI strategies across ING, DBS, JP Morgan, Emirates NBD, Revolut & BofA | HTML · JS · Vercel | 🟢 Live | [GitHub](https://github.com/jintomjose/banking-ai-comparison) · [Live](https://banking-ai-comparison.vercel.app/) |
+| **Notio Spiritus** | Independent app studio — EU-hosted, privacy-first products. Home of Momentum. Backed by a private library of reusable Claude skills. | Vercel · Studio | 🟢 Live | [Live](https://notiospiritus.org) · [Instagram](https://www.instagram.com/notio.spiritus) |
+| **Momentum** | Habit tracker with one rule: only 3 habits. Constraint as product design. A Notio Spiritus product. | React · Supabase · Vercel · PWA | 🟢 Live | Private · [Live](https://momentum-2-change.com) · [Instagram](https://www.instagram.com/momentum.app.3) |
+| **ReginaCaeliCreations** | E-commerce site for a home baker — rum-soaked Christmas plum cake, home-baked in The Hague | Web App · Vercel | 🟢 Live | [GitHub](https://github.com/jintomjose/ReginaCaeliCreations) · [Live](https://reginacaelicreations.com) · [Instagram](https://www.instagram.com/ReginaCaeliCreations) |
+| **Womb Prayer Prep** | Mobile-first PWA for a 280-day womb-prayer journey — a Malayalam devotional book transcribed and translated to English, fully bilingual, shared by two parents. Content-complete (v2.0.0). | React/Vite · TypeScript · Firebase · PWA | 🟢 Live | Private · [Live](https://womb-prayer.web.app) |
+| **Kids Crossword Puzzle** | Trilingual crossword game for a family of three kids — English, Dutch and Malayalam, difficulty tiers, image-and-audio clues, local leaderboard | React · Vite | 🟢 Live | Private · [Live](https://kids-crossword-puzzle.vercel.app) |
 
 ### Data Products — Finance Domain
 
@@ -45,13 +50,12 @@ Now I'm in a third chapter: building AI-native applications from scratch. Claude
 |---|---|---|---|---|
 | **Innovation Index for Dev Teams** | Turns "are we innovative?" into a measurable Product Owner KPI | Org Intelligence | Concept | [GitHub](https://github.com/jintomjose/DataProduct-Innovation-Index-4-DevTeams) |
 
-### Web Applications
+### Research & Strategy
 
 | Project | Description | Stack | Status | Links |
 |---|---|---|---|---|
-| **Notio Spiritus** | Independent app studio — EU-hosted, privacy-first products. Home of Momentum. | Vercel · Studio | 🟢 Live | [Live](https://notiospiritus.org) · [Instagram](https://www.instagram.com/notio.spiritus) |
-| **Momentum** | Habit tracker with one rule: only 3 habits. Constraint as product design. A Notio Spiritus product. | React · Supabase · Vercel · PWA | 🟢 Live | Private · [Live](https://momentum-2-change.com) · [Instagram](https://www.instagram.com/momentum.app.3) |
-| **ReginaCaeliCreations** | E-commerce site for a home baker — rum-soaked Christmas plum cake, home-baked in The Hague | Web App · Vercel | 🟢 Live | [GitHub](https://github.com/jintomjose/ReginaCaeliCreations) · [Live](https://reginacaelicreations.com) · [Instagram](https://www.instagram.com/ReginaCaeliCreations) |
+| **Banking AI Operating Models** | Interactive comparison of AI strategies across ING, DBS, JP Morgan, Emirates NBD, Revolut & BofA | HTML · JS · Vercel | 🟢 Live | [GitHub](https://github.com/jintomjose/banking-ai-comparison) · [Live](https://banking-ai-comparison.vercel.app/) |
+| **AI Transformation Project** | Documenting and driving the shift to AI-native ways of working within an organisation | Strategy · Documentation | Active | Private |
 
 ---
 
@@ -59,9 +63,9 @@ Now I'm in a third chapter: building AI-native applications from scratch. Claude
 
 **Product** — Data Product Design · Roadmapping · OKRs · Product Owner KPIs · Agile · Product-led Growth
 
-**Technical** — Claude API · React · Next.js · Vite · Vercel · GitHub Actions · HTML/CSS/JS · Data Pipelines · Financial Data Systems
+**Technical** — Claude API · React · Next.js · Vite · TypeScript · Vercel · Firebase · Supabase · Neon/Drizzle · GitHub Actions · PWA · Data Pipelines · Financial Data Systems
 
-**Domains** — Financial Services · AI/ML · Customer Experience · Engineering Intelligence
+**Domains** — Financial Services · AI/ML · Customer Experience · Engineering Intelligence · Consumer Apps
 
 ---
 
@@ -70,10 +74,10 @@ Now I'm in a third chapter: building AI-native applications from scratch. Claude
 | | |
 |---|---|
 | 13+ | Years in the data domain |
-| 4 | Active builds in progress |
-| 11 | Total projects |
-| 5 | Live deployments |
-| 3 | Domains covered |
+| 15 | Total projects |
+| 9 | Live deployments |
+| 3 | Active builds in progress |
+| 4 | Domains covered |
 
 ---
 
