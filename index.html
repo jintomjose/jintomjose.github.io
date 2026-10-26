@@ -196,113 +196,9 @@ document.documentElement.setAttribute('data-theme',t);})();
   ]
 }
 </script>
+<link rel="stylesheet" href="/assets/site.css">
+<script defer src="/assets/site.js"></script>
 <style>
-  /* THEME — Notio Spiritus Liquid Glass (Violet Light / Violet dark). Colours only; layout below is unchanged. */
-  :root {
-    color-scheme: light;
-    --bg: #f6f2ea;
-    --glow-1: rgba(167,139,250,.55); --glow-2: rgba(216,180,254,.50); --glow-3: rgba(124,58,237,.30);
-    --bar: rgba(250,247,255,.66); --bar-hi: inset 0 -1px 0 rgba(124,58,237,.08);
-    --line: #e2dacb; --line-strong: #cfc6b4;
-    --strong: #17202b; --fg: #333d4a; --body: #4a5563; --tab: #4a5563; --tabh: #17202b;
-    --accent: #7c3aed; --accent-text: #6d28d9;
-    --glass: rgba(255,255,255,.45); --glass-line: rgba(255,255,255,.75); --glass-hi: inset 0 1.5px 0 rgba(255,255,255,.95);
-    --afg: #17202b; --ahbg: #17202b; --ahfg: #fffdf8;
-    --dot: #cfc6b4; --dot-on: #7c3aed;
-    --tagbg: rgba(255,255,255,.18);
-    --ov: linear-gradient(to bottom, transparent 0%, rgba(22,16,38,.35) 45%, rgba(22,16,38,.92) 100%);
-    --pbg: #17202b; --pfg: #fffdf8; --pbg-h: #2e3a48;
-    --sbg: rgba(255,253,248,.74); --sline: rgba(255,255,255,.85);
-    --live: #4ade80;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      color-scheme: dark;
-      --bg: #0f0c18;
-      --glow-1: rgba(124,58,237,.55); --glow-2: rgba(168,85,247,.32); --glow-3: rgba(91,33,182,.40);
-      --bar: rgba(255,255,255,.10); --bar-hi: inset 0 -1px 0 rgba(255,255,255,.06);
-      --line: rgba(255,255,255,.10); --line-strong: rgba(255,255,255,.18);
-      --strong: #ffffff; --fg: #e5e7eb; --body: #aeb7c4; --tab: #aeb7c4; --tabh: #ffffff;
-      --accent: #c084fc; --accent-text: #c084fc;
-      --glass: rgba(255,255,255,.07); --glass-line: rgba(255,255,255,.16); --glass-hi: inset 0 1.5px 0 rgba(255,255,255,.22);
-      --afg: #e5e7eb; --ahbg: #ffffff; --ahfg: #0f0c18;
-      --dot: rgba(255,255,255,.20); --dot-on: #c084fc;
-      --tagbg: rgba(192,132,252,.20);
-      --ov: linear-gradient(to bottom, transparent 0%, rgba(15,12,24,.35) 45%, rgba(15,12,24,.92) 100%);
-      --pbg: #ffffff; --pfg: #0f0c18; --pbg-h: #e5e7eb;
-      --sbg: rgba(30,26,46,.66); --sline: rgba(255,255,255,.10);
-    }
-  }
-  :root[data-theme="dark"] {
-    color-scheme: dark;
-    --bg: #0f0c18;
-    --glow-1: rgba(124,58,237,.55); --glow-2: rgba(168,85,247,.32); --glow-3: rgba(91,33,182,.40);
-    --bar: rgba(255,255,255,.10); --bar-hi: inset 0 -1px 0 rgba(255,255,255,.06);
-    --line: rgba(255,255,255,.10); --line-strong: rgba(255,255,255,.18);
-    --strong: #ffffff; --fg: #e5e7eb; --body: #aeb7c4; --tab: #aeb7c4; --tabh: #ffffff;
-    --accent: #c084fc; --accent-text: #c084fc;
-    --glass: rgba(255,255,255,.07); --glass-line: rgba(255,255,255,.16); --glass-hi: inset 0 1.5px 0 rgba(255,255,255,.22);
-    --afg: #e5e7eb; --ahbg: #ffffff; --ahfg: #0f0c18;
-    --dot: rgba(255,255,255,.20); --dot-on: #c084fc;
-    --tagbg: rgba(192,132,252,.20);
-    --ov: linear-gradient(to bottom, transparent 0%, rgba(15,12,24,.35) 45%, rgba(15,12,24,.92) 100%);
-    --pbg: #ffffff; --pfg: #0f0c18; --pbg-h: #e5e7eb;
-    --sbg: rgba(30,26,46,.66); --sline: rgba(255,255,255,.10);
-  }
-
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--fg); }
-  /* aurora field: three soft glows behind the page */
-  body::before {
-    content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
-    background:
-      radial-gradient(640px 540px at 88% 0%, var(--glow-1), transparent 70%),
-      radial-gradient(560px 520px at 0% 70%, var(--glow-2), transparent 70%),
-      radial-gradient(600px 420px at 60% 108%, var(--glow-3), transparent 70%);
-  }
-  a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
-
-  /* TOPBAR */
-  .p4-topbar {
-    background: var(--bar);
-    -webkit-backdrop-filter: blur(30px) saturate(1.6); backdrop-filter: blur(30px) saturate(1.6);
-    border-bottom: 1px solid var(--line);
-    box-shadow: var(--bar-hi);
-    padding: 0 32px;
-    display: flex;
-    align-items: center;
-    gap: 32px;
-    position: sticky; top: 0; z-index: 100;
-  }
-  .p4-logo { font-size: 15px; font-weight: 800; padding: 16px 0; letter-spacing: -0.03em; margin-right: 8px; color: var(--strong); }
-  .p4-tabs { display: flex; gap: 0; flex: 1; min-width: 0; overflow-x: auto; scrollbar-width: none; }
-  .p4-tabs::-webkit-scrollbar { display: none; }
-  .p4-tab {
-    font-size: 13px; padding: 16px 18px; border: none; background: transparent;
-    color: var(--tab); cursor: pointer; border-bottom: 2px solid transparent;
-    transition: all 0.15s; white-space: nowrap;
-  }
-  a.p4-tab { text-decoration: none; }
-  .p4-tab:hover { color: var(--tabh); }
-  .p4-tab.active { color: var(--strong); border-bottom-color: var(--accent); font-weight: 600; }
-  .p4-topbar-right { display: flex; gap: 16px; margin-left: auto; align-items: center; }
-  .p4-topbar-link { font-size: 12px; color: var(--tab); text-decoration: none; transition: color 0.15s; }
-  .p4-topbar-link:hover { color: var(--tabh); }
-
-  /* THEME TOGGLE */
-  .p4-theme {
-    width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0;
-    border: 1px solid var(--glass-line); background: var(--glass);
-    -webkit-backdrop-filter: blur(18px) saturate(1.5); backdrop-filter: blur(18px) saturate(1.5);
-    box-shadow: var(--glass-hi);
-    display: flex; align-items: center; justify-content: center;
-    cursor: pointer; color: var(--afg); transition: all 0.15s;
-  }
-  .p4-theme:hover { background: var(--ahbg); color: var(--ahfg); border-color: var(--ahbg); }
-  .p4-theme .ic-sun, .p4-theme .ic-moon { display: none; }
-  :root[data-theme="dark"] .p4-theme .ic-sun { display: block; }
-  :root[data-theme="light"] .p4-theme .ic-moon { display: block; }
-
   /* HERO */
   .p4-hero {
     background: transparent;
@@ -397,19 +293,6 @@ document.documentElement.setAttribute('data-theme',t);})();
   .p4-dot-btn { width: 7px; height: 7px; border-radius: 50%; border: none; background: var(--dot); cursor: pointer; padding: 0; transition: background 0.2s; }
   .p4-dot-btn.active { background: var(--dot-on); }
 
-  /* FOOTER */
-  .p4-footer {
-    border-top: 1px solid var(--line);
-    padding: 28px 48px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .p4-footer-name { font-size: 13px; color: var(--tab); }
-  .p4-footer-links { display: flex; gap: 20px; }
-  .p4-footer-link { font-size: 12px; color: var(--tab); text-decoration: none; transition: color 0.15s; }
-  .p4-footer-link:hover { color: var(--tabh); }
-
   /* ABOUT PANEL */
   .about-panel { display: none; padding: 80px 48px; max-width: 860px; }
   .about-panel.visible { display: block; }
@@ -435,12 +318,10 @@ document.documentElement.setAttribute('data-theme',t);})();
 
   /* ACCESSIBILITY FALLBACKS */
   @media (prefers-reduced-transparency: reduce) {
-    .p4-topbar, .p4-theme, .p4-arrow-btn, .about-link.secondary { -webkit-backdrop-filter: none; backdrop-filter: none; }
-    .p4-topbar { background: var(--bg); }
+    .p4-arrow-btn, .about-link.secondary { -webkit-backdrop-filter: none; backdrop-filter: none; }
   }
   @media (prefers-contrast: more) {
-    .p4-theme, .p4-arrow-btn { background: var(--bg); border-color: var(--strong); }
-    .p4-tab, .p4-topbar-link, .p4-footer-name, .p4-footer-link { color: var(--strong); }
+    .p4-arrow-btn { background: var(--bg); border-color: var(--strong); }
   }
   @media (prefers-reduced-motion: reduce) {
     .p4-carousel-track, .p4-gcard img, .p4-gcard-cta svg { transition: none; }
@@ -448,13 +329,6 @@ document.documentElement.setAttribute('data-theme',t);})();
 
   /* MOBILE */
   @media (max-width: 640px) {
-    .p4-topbar { padding: 0 16px; gap: 12px; }
-    .p4-tabs { overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
-    .p4-tabs::-webkit-scrollbar { display: none; }
-    .p4-tab { padding: 14px 12px; font-size: 12px; white-space: nowrap; }
-    .p4-topbar-right { display: none; }
-    .p4-theme { margin-left: auto; }
-
     .p4-hero { flex-direction: column; align-items: flex-start; padding: 32px 20px 24px; gap: 20px; }
     .p4-hero-h1 { font-size: 28px; }
     .p4-hero-p { font-size: 14px; }
@@ -463,8 +337,6 @@ document.documentElement.setAttribute('data-theme',t);})();
     .p4-carousel-wrap { padding: 24px 0 8px; }
     .p4-carousel-track { padding-left: 20px; gap: 12px; }
     .p4-gcard { width: calc(100vw - 48px); min-height: 380px; }
-
-    .p4-footer { flex-direction: column; align-items: flex-start; gap: 12px; padding: 20px 20px; }
 
     .about-panel { padding: 40px 20px; }
     .about-name { font-size: 36px; }
@@ -478,29 +350,30 @@ document.documentElement.setAttribute('data-theme',t);})();
 </head>
 <body>
 
-<!-- TOPBAR -->
+<!-- BUILD:HEADER -->
 <header role="banner">
-<nav class="p4-topbar" aria-label="Main navigation">
-  <div class="p4-logo">Jinto Jose</div>
-  <div class="p4-tabs">
-    <button class="p4-tab active" data-view="all" onclick="p4filter('all',this)">All Projects</button>
-    <button class="p4-tab" data-view="ai" onclick="p4filter('ai',this)">AI Builds</button>
-    <button class="p4-tab" data-view="web" onclick="p4filter('web',this)">Apps</button>
-    <button class="p4-tab" data-view="data" onclick="p4filter('data',this)">Data Products</button>
-    <button class="p4-tab" data-view="research" onclick="p4filter('research',this)">Research</button>
-    <a class="p4-tab" href="/blog/">Blog</a>
-    <button class="p4-tab" data-view="about" onclick="showAbout(this)">About Jinto</button>
+<nav class="topbar" aria-label="Main navigation">
+  <a class="logo" href="/">Jinto Jose</a>
+  <div class="tabs">
+    <a class="tab active" href="/" data-view="all" data-label="All Projects" aria-current="page">All Projects</a>
+    <a class="tab" href="/#ai" data-view="ai" data-label="AI Builds">AI Builds</a>
+    <a class="tab" href="/#web" data-view="web" data-label="Apps">Apps</a>
+    <a class="tab" href="/#data" data-view="data" data-label="Data Products">Data Products</a>
+    <a class="tab" href="/#research" data-view="research" data-label="Research">Research</a>
+    <a class="tab" href="/blog/" data-view="blog" data-label="Blog">Blog</a>
+    <a class="tab" href="/#about" data-view="about" data-label="About Jinto">About Jinto</a>
   </div>
-  <div class="p4-topbar-right">
-    <a class="p4-topbar-link" href="https://github.com/jintomjose" target="_blank" rel="noopener" aria-label="Jinto Jose on GitHub">GitHub ↗</a>
-    <a class="p4-topbar-link" href="https://www.linkedin.com/in/jintojose" target="_blank" rel="noopener" aria-label="Jinto Jose on LinkedIn">LinkedIn ↗</a>
+  <div class="topbar-right">
+    <a class="topbar-link" href="https://github.com/jintomjose" target="_blank" rel="noopener" aria-label="Jinto Jose on GitHub">GitHub ↗</a>
+    <a class="topbar-link" href="https://www.linkedin.com/in/jintojose" target="_blank" rel="noopener" aria-label="Jinto Jose on LinkedIn">LinkedIn ↗</a>
   </div>
-  <button class="p4-theme" id="p4-theme" type="button" aria-label="Switch theme">
+  <button class="theme" id="theme" type="button" aria-label="Switch theme">
     <svg class="ic-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
     <svg class="ic-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
   </button>
 </nav>
 </header>
+<!-- /BUILD:HEADER -->
 
 <!-- HERO -->
 <main id="main-content">
@@ -863,15 +736,18 @@ document.documentElement.setAttribute('data-theme',t);})();
 </section>
 </main>
 
-<!-- FOOTER -->
-<footer class="p4-footer" role="contentinfo">
-  <small class="p4-footer-name">© 2026 Jinto Jose · Head of Product · The Netherlands</small>
-  <div class="p4-footer-links">
-    <a class="p4-footer-link" href="https://github.com/jintomjose" target="_blank" rel="noopener" aria-label="GitHub profile">GitHub</a>
-    <a class="p4-footer-link" href="https://www.linkedin.com/in/jintojose" target="_blank" rel="noopener" aria-label="LinkedIn profile">LinkedIn</a>
-    <a class="p4-footer-link" href="/projects.json" aria-label="Machine-readable projects data">projects.json</a>
+<!-- BUILD:FOOTER -->
+<footer class="footer" role="contentinfo">
+  <small class="footer-name">© 2026 Jinto Jose · Head of Product · The Netherlands</small>
+  <div class="footer-links">
+    <a class="footer-link" href="https://github.com/jintomjose" target="_blank" rel="noopener" aria-label="GitHub profile">GitHub</a>
+    <a class="footer-link" href="https://www.linkedin.com/in/jintojose" target="_blank" rel="noopener" aria-label="LinkedIn profile">LinkedIn</a>
+    <a class="footer-link" href="/blog/feed.xml" aria-label="Blog RSS feed">RSS</a>
+    <a class="footer-link" href="/projects.json" aria-label="Machine-readable projects data">projects.json</a>
+    <a class="footer-link" href="/posts.json" aria-label="Machine-readable blog posts">posts.json</a>
   </div>
 </footer>
+<!-- /BUILD:FOOTER -->
 
 <script>
 let p4idx = 0;
@@ -915,61 +791,44 @@ function p4initDots() {
   p4update();
 }
 
-function showProjectView() {
-  document.getElementById('aboutPanel').classList.remove('visible');
-  document.querySelector('.p4-hero').style.display = '';
-  document.querySelector('.p4-carousel-wrap').style.display = '';
-  document.getElementById('p4dots').style.display = '';
+var P4_VIEWS = ['all', 'ai', 'web', 'data', 'research', 'about'];
+
+function p4viewFromUrl() {
+  var v = location.hash.slice(1);
+  return P4_VIEWS.indexOf(v) > -1 ? v : 'all';
 }
 
-function showAbout(btn) {
-  document.querySelectorAll('.p4-tab').forEach(t => t.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelector('.p4-hero').style.display = 'none';
-  document.querySelector('.p4-carousel-wrap').style.display = 'none';
-  document.getElementById('p4dots').style.display = 'none';
-  document.getElementById('aboutPanel').classList.add('visible');
-}
-
-function p4filter(cat, btn) {
-  showProjectView();
-  document.querySelectorAll('.p4-tab').forEach(t => t.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelectorAll('#p4track .p4-gcard').forEach(c => {
-    c.style.display = (cat === 'all' || c.dataset.cat === cat) ? 'block' : 'none';
+function p4showView(view) {
+  var about = view === 'about';
+  document.getElementById('aboutPanel').classList.toggle('visible', about);
+  document.querySelector('.p4-hero').style.display = about ? 'none' : '';
+  document.querySelector('.p4-carousel-wrap').style.display = about ? 'none' : '';
+  document.getElementById('p4dots').style.display = about ? 'none' : '';
+  document.querySelectorAll('.tab').forEach(function(t) {
+    var on = t.dataset.view === view;
+    t.classList.toggle('active', on);
+    if (on) t.setAttribute('aria-current', 'page'); else t.removeAttribute('aria-current');
   });
-  p4idx = 0;
-  setTimeout(p4initDots, 10);
+  if (!about) {
+    document.querySelectorAll('#p4track .p4-gcard').forEach(function(c) {
+      c.style.display = (view === 'all' || c.dataset.cat === view) ? 'block' : 'none';
+    });
+    p4initDots();
+  }
 }
 
-document.addEventListener('DOMContentLoaded', p4initDots);
-
-// Deep links from the blog: /#ai, /#web, /#data, /#research, /#about open that tab
-function p4applyHash() {
-  var view = location.hash.slice(1);
-  var btn = view && document.querySelector('.p4-tab[data-view="' + view + '"]');
-  if (btn) btn.click();
-}
-document.addEventListener('DOMContentLoaded', p4applyHash);
-window.addEventListener('hashchange', p4applyHash);
-
-// Theme toggle: follows the system setting until the visitor picks one
-(function() {
-  var root = document.documentElement, btn = document.getElementById('p4-theme');
-  var mq = matchMedia('(prefers-color-scheme: dark)');
-  function label() { btn.setAttribute('aria-label', root.getAttribute('data-theme') === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'); }
-  function stored() { try { var t = localStorage.getItem('jj-theme'); return t === 'light' || t === 'dark' ? t : null; } catch (e) { return null; } }
-  btn.addEventListener('click', function() {
-    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    root.setAttribute('data-theme', next);
-    try { localStorage.setItem('jj-theme', next); } catch (e) {}
-    label();
-  });
-  mq.addEventListener('change', function(e) {
-    if (!stored()) { root.setAttribute('data-theme', e.matches ? 'dark' : 'light'); label(); }
-  });
-  label();
-})();
+// Header tabs are real links (/#ai, /#about, ...). Here they switch views in place and keep the address in sync.
+document.addEventListener('click', function(e) {
+  var a = e.target.closest('.tab[data-view]');
+  if (!a || e.defaultPrevented || e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+  var view = a.dataset.view;
+  if (P4_VIEWS.indexOf(view) < 0) return;
+  e.preventDefault();
+  if (view !== p4viewFromUrl()) history.pushState(null, '', view === 'all' ? location.pathname + location.search : '#' + view);
+  p4showView(view);
+});
+window.addEventListener('popstate', function() { p4showView(p4viewFromUrl()); });
+document.addEventListener('DOMContentLoaded', function() { p4showView(p4viewFromUrl()); });
 
 // Touch swipe support
 (function() {

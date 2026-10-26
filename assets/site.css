@@ -1,0 +1,144 @@
+/* Shared by the portfolio page and every blog page: colour tokens, header, footer, theme toggle. */
+  /* THEME — Notio Spiritus Liquid Glass (Violet Light / Violet dark). Colours only; layout below is unchanged. */
+  :root {
+    color-scheme: light;
+    --bg: #f6f2ea;
+    --glow-1: rgba(167,139,250,.55); --glow-2: rgba(216,180,254,.50); --glow-3: rgba(124,58,237,.30);
+    --bar: rgba(250,247,255,.66); --bar-hi: inset 0 -1px 0 rgba(124,58,237,.08);
+    --line: #e2dacb; --line-strong: #cfc6b4;
+    --strong: #17202b; --fg: #333d4a; --body: #4a5563; --tab: #4a5563; --tabh: #17202b;
+    --accent: #7c3aed; --accent-text: #6d28d9;
+    --glass: rgba(255,255,255,.45); --glass-line: rgba(255,255,255,.75); --glass-hi: inset 0 1.5px 0 rgba(255,255,255,.95);
+    --afg: #17202b; --ahbg: #17202b; --ahfg: #fffdf8;
+    --dot: #cfc6b4; --dot-on: #7c3aed;
+    --tagbg: rgba(255,255,255,.18);
+    --ov: linear-gradient(to bottom, transparent 0%, rgba(22,16,38,.35) 45%, rgba(22,16,38,.92) 100%);
+    --pbg: #17202b; --pfg: #fffdf8; --pbg-h: #2e3a48;
+    --sbg: rgba(255,253,248,.74); --sline: rgba(255,255,255,.85);
+    --live: #4ade80;
+    --chip-bg: rgba(124,58,237,.10); --code-bg: rgba(23,32,43,.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg: #0f0c18;
+      --glow-1: rgba(124,58,237,.55); --glow-2: rgba(168,85,247,.32); --glow-3: rgba(91,33,182,.40);
+      --bar: rgba(255,255,255,.10); --bar-hi: inset 0 -1px 0 rgba(255,255,255,.06);
+      --line: rgba(255,255,255,.10); --line-strong: rgba(255,255,255,.18);
+      --strong: #ffffff; --fg: #e5e7eb; --body: #aeb7c4; --tab: #aeb7c4; --tabh: #ffffff;
+      --accent: #c084fc; --accent-text: #c084fc;
+      --glass: rgba(255,255,255,.07); --glass-line: rgba(255,255,255,.16); --glass-hi: inset 0 1.5px 0 rgba(255,255,255,.22);
+      --afg: #e5e7eb; --ahbg: #ffffff; --ahfg: #0f0c18;
+      --dot: rgba(255,255,255,.20); --dot-on: #c084fc;
+      --tagbg: rgba(192,132,252,.20);
+      --ov: linear-gradient(to bottom, transparent 0%, rgba(15,12,24,.35) 45%, rgba(15,12,24,.92) 100%);
+      --pbg: #ffffff; --pfg: #0f0c18; --pbg-h: #e5e7eb;
+      --sbg: rgba(30,26,46,.66); --sline: rgba(255,255,255,.10);
+      --chip-bg: rgba(192,132,252,.20); --code-bg: rgba(255,255,255,.08);
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #0f0c18;
+    --glow-1: rgba(124,58,237,.55); --glow-2: rgba(168,85,247,.32); --glow-3: rgba(91,33,182,.40);
+    --bar: rgba(255,255,255,.10); --bar-hi: inset 0 -1px 0 rgba(255,255,255,.06);
+    --line: rgba(255,255,255,.10); --line-strong: rgba(255,255,255,.18);
+    --strong: #ffffff; --fg: #e5e7eb; --body: #aeb7c4; --tab: #aeb7c4; --tabh: #ffffff;
+    --accent: #c084fc; --accent-text: #c084fc;
+    --glass: rgba(255,255,255,.07); --glass-line: rgba(255,255,255,.16); --glass-hi: inset 0 1.5px 0 rgba(255,255,255,.22);
+    --afg: #e5e7eb; --ahbg: #ffffff; --ahfg: #0f0c18;
+    --dot: rgba(255,255,255,.20); --dot-on: #c084fc;
+    --tagbg: rgba(192,132,252,.20);
+    --ov: linear-gradient(to bottom, transparent 0%, rgba(15,12,24,.35) 45%, rgba(15,12,24,.92) 100%);
+    --pbg: #ffffff; --pfg: #0f0c18; --pbg-h: #e5e7eb;
+    --sbg: rgba(30,26,46,.66); --sline: rgba(255,255,255,.10);
+    --chip-bg: rgba(192,132,252,.20); --code-bg: rgba(255,255,255,.08);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--fg); }
+  /* aurora field: three soft glows behind the page */
+  body::before {
+    content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+    background:
+      radial-gradient(640px 540px at 88% 0%, var(--glow-1), transparent 70%),
+      radial-gradient(560px 520px at 0% 70%, var(--glow-2), transparent 70%),
+      radial-gradient(600px 420px at 60% 108%, var(--glow-3), transparent 70%);
+  }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+
+  /* TOPBAR */
+  .topbar {
+    background: var(--bar);
+    -webkit-backdrop-filter: blur(30px) saturate(1.6); backdrop-filter: blur(30px) saturate(1.6);
+    border-bottom: 1px solid var(--line);
+    box-shadow: var(--bar-hi);
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .logo { font-size: 15px; text-decoration: none; font-weight: 800; padding: 16px 0; letter-spacing: -0.03em; margin-right: 8px; color: var(--strong); }
+  .tabs { display: flex; gap: 0; flex: 1; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab {
+    display: flex; flex-direction: column; align-items: center;
+    font-size: 13px; padding: 16px 18px; text-decoration: none;
+    color: var(--tab); border-bottom: 2px solid transparent;
+    transition: all 0.15s; white-space: nowrap;
+  }
+  /* hidden bold copy keeps the tab as wide as its active state, so nothing shifts when the active tab changes */
+  .tab::after { content: attr(data-label); font-weight: 600; height: 0; overflow: hidden; visibility: hidden; pointer-events: none; }
+  .tab:hover { color: var(--tabh); }
+  .tab.active { color: var(--strong); border-bottom-color: var(--accent); font-weight: 600; }
+  .topbar-right { display: flex; gap: 16px; margin-left: auto; align-items: center; }
+  .topbar-link { text-decoration: none; font-size: 12px; color: var(--tab); text-decoration: none; transition: color 0.15s; }
+  .topbar-link:hover { color: var(--tabh); }
+
+  /* THEME TOGGLE */
+  .theme {
+    width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0;
+    border: 1px solid var(--glass-line); background: var(--glass);
+    -webkit-backdrop-filter: blur(18px) saturate(1.5); backdrop-filter: blur(18px) saturate(1.5);
+    box-shadow: var(--glass-hi);
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; color: var(--afg); transition: all 0.15s;
+  }
+  .theme:hover { background: var(--ahbg); color: var(--ahfg); border-color: var(--ahbg); }
+  .theme .ic-sun, .theme .ic-moon { display: none; }
+  :root[data-theme="dark"] .theme .ic-sun { display: block; }
+  :root[data-theme="light"] .theme .ic-moon { display: block; }
+
+  /* FOOTER */
+  .footer {
+    border-top: 1px solid var(--line);
+    padding: 28px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-name { font-size: 13px; color: var(--tab); }
+  .footer-links { display: flex; gap: 20px; }
+  .footer-link { text-decoration: none; font-size: 12px; color: var(--tab); text-decoration: none; transition: color 0.15s; }
+  .footer-link:hover { color: var(--tabh); }
+
+
+  /* ACCESSIBILITY FALLBACKS */
+  @media (prefers-reduced-transparency: reduce) {
+    .topbar, .theme { -webkit-backdrop-filter: none; backdrop-filter: none; }
+    .topbar { background: var(--bg); }
+  }
+  @media (prefers-contrast: more) {
+    .theme { background: var(--bg); border-color: var(--strong); }
+    .tab, .topbar-link, .footer-name, .footer-link { color: var(--strong); }
+  }
+
+  /* MOBILE */
+  @media (max-width: 640px) {
+    .topbar { padding: 0 16px; gap: 12px; }
+    .tab { padding: 14px 12px; font-size: 12px; }
+    .topbar-right { display: none; }
+    .theme { margin-left: auto; }
+    .footer { flex-direction: column; align-items: flex-start; gap: 12px; padding: 20px 20px; }
+  }

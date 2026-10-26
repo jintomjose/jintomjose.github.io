@@ -2,6 +2,7 @@
 // Builds the blog from posts/*.md into static files GitHub Pages can serve.
 //   node scripts/build-blog.mjs            published posts only
 //   node scripts/build-blog.mjs --drafts   include `draft: true` posts (local preview)
+// Also writes the shared header/footer into index.html (between the BUILD markers).
 // Outputs: blog/index.html, blog/<slug>/index.html, blog/feed.xml, posts.json, sitemap.xml
 import { readFileSync, writeFileSync, readdirSync, mkdirSync, rmSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
@@ -95,9 +96,20 @@ const rfc822 = d => new Date(d + 'T09:00:00Z').toUTCString();
 
 // ---------- page chrome ----------
 const THEME_BOOT = `<script>(function(){var t;try{t=localStorage.getItem('jj-theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);})();</script>`;
-const THEME_TOGGLE = `<script>(function(){var r=document.documentElement,b=document.getElementById('theme');function l(){b.setAttribute('aria-label',r.getAttribute('data-theme')==='dark'?'Switch to light theme':'Switch to dark theme')}b.addEventListener('click',function(){var n=r.getAttribute('data-theme')==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem('jj-theme',n)}catch(e){}l()});l();})();</script>`;
-const ICON_SUN = '<svg class="ic-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>';
-const ICON_MOON = '<svg class="ic-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>';
+
+// Header and footer have one source (scripts/partials/) and are written into index.html and every blog page.
+const partial = name => readFileSync(join(ROOT, 'scripts', 'partials', name), 'utf8').trim();
+function header(active) {
+  return partial('header.html').replace(/<a class="tab" ([^>]*?)data-view="([^"]+)"([^>]*)>([^<]+)<\/a>/g,
+    (_, pre, view, post, text) => `<a class="tab${view === active ? ' active' : ''}" ${pre}data-view="${view}" data-label="${esc(text)}"${post}${view === active ? ' aria-current="page"' : ''}>${text}</a>`);
+}
+const footer = () => partial('footer.html');
+
+function injectBlock(html, name, content) {
+  const re = new RegExp(`(<!-- BUILD:${name} -->)[\\s\\S]*?(<!-- /BUILD:${name} -->)`);
+  if (!re.test(html)) throw new Error(`index.html is missing the BUILD:${name} markers`);
+  return html.replace(re, (_, open, close) => `${open}\n${content}\n${close}`);
+}
 
 function page({ title, description, path, type = 'website', jsonld, body, script = '' }) {
   const url = SITE + path;
@@ -119,42 +131,17 @@ ${THEME_BOOT}
 <meta property="og:type" content="${type}">
 <link rel="canonical" href="${url}">
 <link rel="alternate" type="application/rss+xml" title="Jinto Jose — Blog" href="${SITE}/blog/feed.xml">
+<link rel="stylesheet" href="/assets/site.css">
 <link rel="stylesheet" href="/blog/assets/blog.css">
+<script defer src="/assets/site.js"></script>
 ${jsonld ? `<script type="application/ld+json">${JSON.stringify(jsonld)}</script>` : ''}
 </head>
 <body>
-<header role="banner">
-<nav class="topbar" aria-label="Main navigation">
-  <a class="logo" href="/">Jinto Jose</a>
-  <div class="tabs">
-    <a class="tab" href="/">All Projects</a>
-    <a class="tab" href="/#ai">AI Builds</a>
-    <a class="tab" href="/#web">Apps</a>
-    <a class="tab" href="/#data">Data Products</a>
-    <a class="tab" href="/#research">Research</a>
-    <a class="tab active" href="/blog/" aria-current="page">Blog</a>
-    <a class="tab" href="/#about">About Jinto</a>
-  </div>
-  <div class="topbar-right">
-    <a class="topbar-link" href="https://github.com/jintomjose" rel="noopener">GitHub ↗</a>
-    <a class="topbar-link" href="https://www.linkedin.com/in/jintojose" rel="noopener">LinkedIn ↗</a>
-  </div>
-  <button class="theme" id="theme" type="button" aria-label="Switch theme">${ICON_SUN}${ICON_MOON}</button>
-</nav>
-</header>
+${header('blog')}
 <main id="main-content">
 ${body}
 </main>
-<footer class="footer" role="contentinfo">
-  <small>© 2026 Jinto Jose · Head of Product · The Netherlands</small>
-  <div class="footer-links">
-    <a href="/blog/feed.xml">RSS</a>
-    <a href="/posts.json">posts.json</a>
-    <a href="https://github.com/jintomjose" rel="noopener">GitHub</a>
-    <a href="https://www.linkedin.com/in/jintojose" rel="noopener">LinkedIn</a>
-  </div>
-</footer>
-${THEME_TOGGLE}
+${footer()}
 ${script}
 </body>
 </html>
@@ -316,6 +303,11 @@ for (const p of posts) {
   writeFileSync(join(blogDir, p.slug, 'index.html'), postPage(p));
 }
 writeFileSync(join(blogDir, 'feed.xml'), feed(posts));
+const indexPath = join(ROOT, 'index.html');
+let home = readFileSync(indexPath, 'utf8');
+home = injectBlock(home, 'HEADER', header('all'));
+home = injectBlock(home, 'FOOTER', footer());
+writeFileSync(indexPath, home);
 writeFileSync(join(ROOT, 'posts.json'), JSON.stringify(posts.map(({ title, slug, date, tags, summary, linkedin, minutes }) =>
   ({ title, url: `${SITE}/blog/${slug}/`, date, tags, summary, readingMinutes: minutes, ...(linkedin ? { linkedin } : {}) })), null, 2) + '\n');
 writeFileSync(join(ROOT, 'sitemap.xml'), sitemap(posts));
