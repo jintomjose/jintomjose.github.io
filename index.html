@@ -483,13 +483,13 @@ document.documentElement.setAttribute('data-theme',t);})();
 <nav class="p4-topbar" aria-label="Main navigation">
   <div class="p4-logo">Jinto Jose</div>
   <div class="p4-tabs">
-    <button class="p4-tab active" onclick="p4filter('all',this)">All Projects</button>
-    <button class="p4-tab" onclick="p4filter('ai',this)">AI Builds</button>
-    <button class="p4-tab" onclick="p4filter('web',this)">Apps</button>
-    <button class="p4-tab" onclick="p4filter('data',this)">Data Products</button>
-    <button class="p4-tab" onclick="p4filter('research',this)">Research</button>
+    <button class="p4-tab active" data-view="all" onclick="p4filter('all',this)">All Projects</button>
+    <button class="p4-tab" data-view="ai" onclick="p4filter('ai',this)">AI Builds</button>
+    <button class="p4-tab" data-view="web" onclick="p4filter('web',this)">Apps</button>
+    <button class="p4-tab" data-view="data" onclick="p4filter('data',this)">Data Products</button>
+    <button class="p4-tab" data-view="research" onclick="p4filter('research',this)">Research</button>
     <a class="p4-tab" href="/blog/">Blog</a>
-    <button class="p4-tab" onclick="showAbout(this)">About Jinto</button>
+    <button class="p4-tab" data-view="about" onclick="showAbout(this)">About Jinto</button>
   </div>
   <div class="p4-topbar-right">
     <a class="p4-topbar-link" href="https://github.com/jintomjose" target="_blank" rel="noopener" aria-label="Jinto Jose on GitHub">GitHub ↗</a>
@@ -943,6 +943,15 @@ function p4filter(cat, btn) {
 }
 
 document.addEventListener('DOMContentLoaded', p4initDots);
+
+// Deep links from the blog: /#ai, /#web, /#data, /#research, /#about open that tab
+function p4applyHash() {
+  var view = location.hash.slice(1);
+  var btn = view && document.querySelector('.p4-tab[data-view="' + view + '"]');
+  if (btn) btn.click();
+}
+document.addEventListener('DOMContentLoaded', p4applyHash);
+window.addEventListener('hashchange', p4applyHash);
 
 // Theme toggle: follows the system setting until the visitor picks one
 (function() {
