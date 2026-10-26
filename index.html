@@ -282,6 +282,7 @@ document.documentElement.setAttribute('data-theme',t);})();
     color: var(--tab); cursor: pointer; border-bottom: 2px solid transparent;
     transition: all 0.15s; white-space: nowrap;
   }
+  a.p4-tab { text-decoration: none; }
   .p4-tab:hover { color: var(--tabh); }
   .p4-tab.active { color: var(--strong); border-bottom-color: var(--accent); font-weight: 600; }
   .p4-topbar-right { display: flex; gap: 16px; margin-left: auto; align-items: center; }
@@ -487,6 +488,7 @@ document.documentElement.setAttribute('data-theme',t);})();
     <button class="p4-tab" onclick="p4filter('web',this)">Apps</button>
     <button class="p4-tab" onclick="p4filter('data',this)">Data Products</button>
     <button class="p4-tab" onclick="p4filter('research',this)">Research</button>
+    <a class="p4-tab" href="/blog/">Blog</a>
     <button class="p4-tab" onclick="showAbout(this)">About Jinto</button>
   </div>
   <div class="p4-topbar-right">
