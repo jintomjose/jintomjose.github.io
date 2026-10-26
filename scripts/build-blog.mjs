@@ -95,7 +95,6 @@ const fmtShort = d => { const [, m, day] = d.split('-').map(Number); return `${S
 const rfc822 = d => new Date(d + 'T09:00:00Z').toUTCString();
 
 // ---------- page chrome ----------
-const THEME_BOOT = `<script>(function(){var t;try{t=localStorage.getItem('jj-theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);})();</script>`;
 
 // Header and footer have one source (scripts/partials/) and are written into index.html and every blog page.
 const partial = name => readFileSync(join(ROOT, 'scripts', 'partials', name), 'utf8').trim();
@@ -118,10 +117,8 @@ function page({ title, description, path, type = 'website', jsonld, body, script
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#f6f2ea" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0f0c18" media="(prefers-color-scheme: dark)">
-${THEME_BOOT}
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#000000">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
 <meta name="author" content="Jinto Jose">
@@ -133,7 +130,6 @@ ${THEME_BOOT}
 <link rel="alternate" type="application/rss+xml" title="Jinto Jose — Blog" href="${SITE}/blog/feed.xml">
 <link rel="stylesheet" href="/assets/site.css">
 <link rel="stylesheet" href="/blog/assets/post.css">
-<script defer src="/assets/site.js"></script>
 ${jsonld ? `<script type="application/ld+json">${JSON.stringify(jsonld)}</script>` : ''}
 </head>
 <body>
