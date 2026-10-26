@@ -24,6 +24,7 @@ document.documentElement.setAttribute('data-theme',t);})();
 
 <!-- Canonical -->
 <link rel="canonical" href="https://jintomjose.github.io">
+<link rel="alternate" type="application/rss+xml" title="Jinto Jose — Blog" href="https://jintomjose.github.io/blog/feed.xml">
 
 <!-- JSON-LD Structured Data -->
 <script type="application/ld+json">
@@ -316,6 +317,33 @@ document.documentElement.setAttribute('data-theme',t);})();
   .about-stat-n { font-size: 36px; font-weight: 800; color: var(--strong); letter-spacing: -0.04em; line-height: 1; }
   .about-stat-l { font-size: 12px; color: var(--tab); margin-top: 6px; text-transform: uppercase; letter-spacing: 0.08em; }
 
+  /* BLOG PANEL (generated markup between the BUILD:BLOG markers) */
+  .blog-panel { display: none; padding: 64px 48px 80px; max-width: 860px; }
+  .blog-panel.visible { display: block; }
+  .blog-panel [hidden] { display: none !important; }
+  .bl-title { font-size: 44px; font-weight: 700; letter-spacing: -0.04em; line-height: 1.1; color: var(--strong); }
+  .bl-intro { font-size: 15px; color: var(--body); line-height: 1.6; margin: 12px 0 28px; max-width: 480px; }
+  .bl-intro a { color: var(--accent-text); font-weight: 600; text-decoration: none; }
+  .bl-filters { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; margin-bottom: 14px; }
+  .bl-chip { font: inherit; font-size: 12px; padding: 6px 13px; border-radius: 999px; cursor: pointer; color: var(--body); background: var(--glass); border: 1px solid var(--glass-line); box-shadow: var(--glass-hi); -webkit-backdrop-filter: blur(18px) saturate(1.5); backdrop-filter: blur(18px) saturate(1.5); transition: all 0.15s; }
+  .bl-chip:hover { color: var(--strong); }
+  .bl-chip.on { background: var(--pbg); color: var(--pfg); border-color: var(--pbg); }
+  .bl-search { margin-left: auto; font: inherit; font-size: 12px; padding: 7px 14px; border-radius: 999px; color: var(--strong); min-width: 180px; background: var(--glass); border: 1px solid var(--glass-line); box-shadow: var(--glass-hi); -webkit-backdrop-filter: blur(18px) saturate(1.5); backdrop-filter: blur(18px) saturate(1.5); }
+  .bl-search::placeholder { color: var(--tab); }
+  .bl-search:focus-visible, .bl-chip:focus-visible, .bl-row:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+  .bl-month { font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent-text); font-weight: 600; margin: 26px 0 6px; }
+  .bl-row { display: grid; grid-template-columns: 62px 1fr auto; gap: 14px; padding: 15px 0; border-top: 1px solid var(--line); align-items: baseline; text-decoration: none; }
+  .bl-d { font-size: 12px; color: var(--tab); font-variant-numeric: tabular-nums; }
+  .bl-d.pin { color: var(--accent-text); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; font-size: 10px; }
+  .bl-h { font-size: 17px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.25; color: var(--strong); }
+  .bl-x { font-size: 13.5px; color: var(--body); line-height: 1.5; margin-top: 4px; }
+  .bl-m { font-size: 11px; color: var(--tab); white-space: nowrap; }
+  .bl-row:hover .bl-h { color: var(--accent-text); }
+  .bl-tag { font-size: 10px; padding: 2px 8px; background: var(--chip-bg); color: var(--accent-text); border-radius: 4px; font-weight: 600; vertical-align: middle; }
+  .bl-empty { color: var(--body); line-height: 1.6; padding: 24px 0; }
+  .bl-empty strong { color: var(--strong); font-size: 18px; }
+  .bl-empty a { color: var(--accent-text); font-weight: 600; text-decoration: none; }
+
   /* ACCESSIBILITY FALLBACKS */
   @media (prefers-reduced-transparency: reduce) {
     .p4-arrow-btn, .about-link.secondary { -webkit-backdrop-filter: none; backdrop-filter: none; }
@@ -324,7 +352,7 @@ document.documentElement.setAttribute('data-theme',t);})();
     .p4-arrow-btn { background: var(--bg); border-color: var(--strong); }
   }
   @media (prefers-reduced-motion: reduce) {
-    .p4-carousel-track, .p4-gcard img, .p4-gcard-cta svg { transition: none; }
+    .p4-carousel-track, .p4-gcard img, .p4-gcard-cta svg, .bl-chip { transition: none; }
   }
 
   /* MOBILE */
@@ -337,6 +365,12 @@ document.documentElement.setAttribute('data-theme',t);})();
     .p4-carousel-wrap { padding: 24px 0 8px; }
     .p4-carousel-track { padding-left: 20px; gap: 12px; }
     .p4-gcard { width: calc(100vw - 48px); min-height: 380px; }
+
+    .blog-panel { padding: 32px 20px 48px; }
+    .bl-title { font-size: 28px; }
+    .bl-search { margin-left: 0; width: 100%; }
+    .bl-row { grid-template-columns: 48px 1fr; gap: 10px; }
+    .bl-m { display: none; }
 
     .about-panel { padding: 40px 20px; }
     .about-name { font-size: 36px; }
@@ -360,7 +394,7 @@ document.documentElement.setAttribute('data-theme',t);})();
     <a class="tab" href="/#web" data-view="web" data-label="Apps">Apps</a>
     <a class="tab" href="/#data" data-view="data" data-label="Data Products">Data Products</a>
     <a class="tab" href="/#research" data-view="research" data-label="Research">Research</a>
-    <a class="tab" href="/blog/" data-view="blog" data-label="Blog">Blog</a>
+    <a class="tab" href="/#blog" data-view="blog" data-label="Blog">Blog</a>
     <a class="tab" href="/#about" data-view="about" data-label="About Jinto">About Jinto</a>
   </div>
   <div class="topbar-right">
@@ -734,6 +768,15 @@ document.documentElement.setAttribute('data-theme',t);})();
     </div>
   </div>
 </section>
+
+<!-- BUILD:BLOG -->
+<section class="blog-panel" id="blogPanel" aria-label="Blog">
+  <div class="about-kicker">Blog · Jinto Jose</div>
+  <h2 class="bl-title">Notes from building in the open.</h2>
+  <p class="bl-intro">Product, data and AI — first published here, then shared on LinkedIn. Everything lives in <a href="https://github.com/jintomjose/jintomjose.github.io" target="_blank" rel="noopener">one GitHub repo</a>. <a href="/blog/feed.xml">RSS</a></p>
+  <div class="bl-empty"><strong>First posts landing soon.</strong><br>Subscribe with <a href="/blog/feed.xml">RSS</a> or follow on <a href="https://www.linkedin.com/in/jintojose" target="_blank" rel="noopener">LinkedIn</a>.</div>
+</section>
+<!-- /BUILD:BLOG -->
 </main>
 
 <!-- BUILD:FOOTER -->
@@ -791,7 +834,7 @@ function p4initDots() {
   p4update();
 }
 
-var P4_VIEWS = ['all', 'ai', 'web', 'data', 'research', 'about'];
+var P4_VIEWS = ['all', 'ai', 'web', 'data', 'research', 'blog', 'about'];
 
 function p4viewFromUrl() {
   var v = location.hash.slice(1);
@@ -799,17 +842,18 @@ function p4viewFromUrl() {
 }
 
 function p4showView(view) {
-  var about = view === 'about';
+  var about = view === 'about', blog = view === 'blog', projects = !about && !blog;
   document.getElementById('aboutPanel').classList.toggle('visible', about);
-  document.querySelector('.p4-hero').style.display = about ? 'none' : '';
-  document.querySelector('.p4-carousel-wrap').style.display = about ? 'none' : '';
-  document.getElementById('p4dots').style.display = about ? 'none' : '';
+  document.getElementById('blogPanel').classList.toggle('visible', blog);
+  document.querySelector('.p4-hero').style.display = projects ? '' : 'none';
+  document.querySelector('.p4-carousel-wrap').style.display = projects ? '' : 'none';
+  document.getElementById('p4dots').style.display = projects ? '' : 'none';
   document.querySelectorAll('.tab').forEach(function(t) {
     var on = t.dataset.view === view;
     t.classList.toggle('active', on);
     if (on) t.setAttribute('aria-current', 'page'); else t.removeAttribute('aria-current');
   });
-  if (!about) {
+  if (projects) {
     document.querySelectorAll('#p4track .p4-gcard').forEach(function(c) {
       c.style.display = (view === 'all' || c.dataset.cat === view) ? 'block' : 'none';
     });
@@ -829,6 +873,29 @@ document.addEventListener('click', function(e) {
 });
 window.addEventListener('popstate', function() { p4showView(p4viewFromUrl()); });
 document.addEventListener('DOMContentLoaded', function() { p4showView(p4viewFromUrl()); });
+
+// Blog tab: tag chips + search over the generated archive
+(function() {
+  var q = document.getElementById('blQ');
+  if (!q) return;
+  var chips = [].slice.call(document.querySelectorAll('.bl-chip')), rows = [].slice.call(document.querySelectorAll('.bl-row')),
+      groups = [].slice.call(document.querySelectorAll('.bl-month')), none = document.getElementById('blNone'), tag = '';
+  function apply() {
+    var s = q.value.trim().toLowerCase(), shown = 0;
+    rows.forEach(function(r) {
+      var ok = (!tag || r.dataset.tags.split('|').indexOf(tag) > -1) && (!s || r.dataset.text.indexOf(s) > -1);
+      r.hidden = !ok; if (ok) shown++;
+    });
+    groups.forEach(function(g) {
+      var n = g.nextElementSibling, any = false;
+      while (n && n.classList.contains('bl-row')) { if (!n.hidden) any = true; n = n.nextElementSibling; }
+      g.hidden = !any;
+    });
+    none.hidden = shown > 0;
+  }
+  chips.forEach(function(c) { c.addEventListener('click', function() { tag = c.dataset.tag; chips.forEach(function(x) { x.classList.toggle('on', x === c); }); apply(); }); });
+  q.addEventListener('input', apply);
+})();
 
 // Touch swipe support
 (function() {

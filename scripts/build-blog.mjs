@@ -2,8 +2,8 @@
 // Builds the blog from posts/*.md into static files GitHub Pages can serve.
 //   node scripts/build-blog.mjs            published posts only
 //   node scripts/build-blog.mjs --drafts   include `draft: true` posts (local preview)
-// Also writes the shared header/footer into index.html (between the BUILD markers).
-// Outputs: blog/index.html, blog/<slug>/index.html, blog/feed.xml, posts.json, sitemap.xml
+// Also writes the shared header/footer and the Blog tab into index.html (between the BUILD markers).
+// Outputs: the Blog tab inside index.html, blog/<slug>/index.html, a /blog/ redirect, blog/feed.xml, posts.json, sitemap.xml
 import { readFileSync, writeFileSync, readdirSync, mkdirSync, rmSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -132,7 +132,7 @@ ${THEME_BOOT}
 <link rel="canonical" href="${url}">
 <link rel="alternate" type="application/rss+xml" title="Jinto Jose — Blog" href="${SITE}/blog/feed.xml">
 <link rel="stylesheet" href="/assets/site.css">
-<link rel="stylesheet" href="/blog/assets/blog.css">
+<link rel="stylesheet" href="/blog/assets/post.css">
 <script defer src="/assets/site.js"></script>
 ${jsonld ? `<script type="application/ld+json">${JSON.stringify(jsonld)}</script>` : ''}
 </head>
@@ -148,16 +148,16 @@ ${script}
 `;
 }
 
-// ---------- index (Option C: timeline archive) ----------
-function indexPage(posts) {
+// ---------- blog tab (archive panel inside index.html) ----------
+function blogPanel(posts) {
   const pinned = posts.filter(p => p.pinned);
   const rest = posts.filter(p => !p.pinned);
   const tags = [...new Set(posts.flatMap(p => p.tags))].sort((a, b) => a.localeCompare(b));
 
-  const row = (p, pin) => `<a class="row" href="/blog/${p.slug}/" data-tags="${esc(p.tags.join('|'))}" data-text="${esc((p.title + ' ' + p.summary + ' ' + p.tags.join(' ')).toLowerCase())}">
-    <span class="d${pin ? ' pin' : ''}">${pin ? 'Pinned' : fmtShort(p.date)}</span>
-    <div><div class="h">${esc(p.title)}${p.draft ? ' <span class="tag">draft</span>' : ''}</div><div class="x">${esc(p.summary)}</div></div>
-    <span class="meta-r">${p.minutes} min</span>
+  const row = (p, pin) => `<a class="bl-row" href="/blog/${p.slug}/" data-tags="${esc(p.tags.join('|'))}" data-text="${esc((p.title + ' ' + p.summary + ' ' + p.tags.join(' ')).toLowerCase())}">
+    <span class="bl-d${pin ? ' pin' : ''}">${pin ? 'Pinned' : fmtShort(p.date)}</span>
+    <div><div class="bl-h">${esc(p.title)}${p.draft ? ' <span class="bl-tag">draft</span>' : ''}</div><div class="bl-x">${esc(p.summary)}</div></div>
+    <span class="bl-m">${p.minutes} min</span>
   </a>`;
 
   const groups = [];
@@ -169,56 +169,44 @@ function indexPage(posts) {
     g.posts.push(p);
   }
 
-  const body = `<section class="blog-hero" aria-label="Blog introduction">
-  <p class="hero-label">Blog · Jinto Jose</p>
-  <h1 class="hero-h1">Notes from building in the open.</h1>
-  <p class="hero-p">Product, data and AI — first published here, then shared on LinkedIn. Everything lives in <a href="${REPO}">one GitHub repo</a>.</p>
-</section>
-<section class="archive" aria-label="Posts">
-${posts.length ? `  <div class="filters" role="group" aria-label="Filter posts">
-    <button class="chip on" type="button" data-tag="">All</button>
-    ${tags.map(t => `<button class="chip" type="button" data-tag="${esc(t)}">${esc(t)}</button>`).join('\n    ')}
-    <input class="search glass" id="q" type="search" placeholder="Search posts…" aria-label="Search posts">
+  return `<section class="blog-panel" id="blogPanel" aria-label="Blog">
+  <div class="about-kicker">Blog · Jinto Jose</div>
+  <h2 class="bl-title">Notes from building in the open.</h2>
+  <p class="bl-intro">Product, data and AI — first published here, then shared on LinkedIn. Everything lives in <a href="${REPO}" target="_blank" rel="noopener">one GitHub repo</a>. <a href="/blog/feed.xml">RSS</a></p>
+${posts.length ? `  <div class="bl-filters" role="group" aria-label="Filter posts">
+    <button class="bl-chip on" type="button" data-tag="">All</button>
+    ${tags.map(t => `<button class="bl-chip" type="button" data-tag="${esc(t)}">${esc(t)}</button>`).join('\n    ')}
+    <input class="bl-search" id="blQ" type="search" placeholder="Search posts…" aria-label="Search posts">
   </div>
-  <div id="list">
-  ${pinned.length ? `<h2 class="month" data-group>Pinned</h2>\n${pinned.map(p => row(p, true)).join('\n')}` : ''}
-  ${groups.map(g => `<h2 class="month" data-group>${g.key}</h2>\n${g.posts.map(p => row(p, false)).join('\n')}`).join('\n')}
+  <div id="blList">
+  ${pinned.length ? `<h3 class="bl-month" data-group>Pinned</h3>\n${pinned.map(p => row(p, true)).join('\n')}` : ''}
+  ${groups.map(g => `<h3 class="bl-month" data-group>${g.key}</h3>\n${g.posts.map(p => row(p, false)).join('\n')}`).join('\n')}
   </div>
-  <p class="empty" id="none" hidden>No posts match. Try a different tag or search.</p>`
-    : `  <div class="empty-state"><h2 class="h">First posts landing soon.</h2><p class="x">Subscribe with <a href="/blog/feed.xml">RSS</a> or follow on <a href="https://www.linkedin.com/in/jintojose" rel="noopener">LinkedIn</a>.</p></div>`}
+  <p class="bl-empty" id="blNone" hidden>No posts match. Try a different tag or search.</p>`
+    : `  <div class="bl-empty"><strong>First posts landing soon.</strong><br>Subscribe with <a href="/blog/feed.xml">RSS</a> or follow on <a href="https://www.linkedin.com/in/jintojose" target="_blank" rel="noopener">LinkedIn</a>.</div>`}
 </section>`;
+}
 
-  const script = posts.length ? `<script>
-(function(){
-  var chips=[].slice.call(document.querySelectorAll('.chip')),rows=[].slice.call(document.querySelectorAll('.row')),
-      groups=[].slice.call(document.querySelectorAll('[data-group]')),q=document.getElementById('q'),none=document.getElementById('none'),tag='';
-  function apply(){
-    var s=q.value.trim().toLowerCase(),shown=0;
-    rows.forEach(function(r){
-      var ok=(!tag||r.dataset.tags.split('|').indexOf(tag)>-1)&&(!s||r.dataset.text.indexOf(s)>-1);
-      r.hidden=!ok;if(ok)shown++;
-    });
-    groups.forEach(function(g){var n=g.nextElementSibling,any=false;while(n&&n.classList.contains('row')){if(!n.hidden)any=true;n=n.nextElementSibling}g.hidden=!any});
-    none.hidden=shown>0;
-  }
-  chips.forEach(function(c){c.addEventListener('click',function(){tag=c.dataset.tag;chips.forEach(function(x){x.classList.toggle('on',x===c)});apply()})});
-  q.addEventListener('input',apply);
-})();
-</script>` : '';
-
-  return page({
-    title: 'Blog — Jinto Jose',
-    description: 'Notes on product, data and AI-native building by Jinto Jose, Head of Product.',
-    path: '/blog/',
-    jsonld: { '@context': 'https://schema.org', '@type': 'Blog', name: 'Jinto Jose — Blog', url: `${SITE}/blog/`, author: { '@type': 'Person', name: 'Jinto Jose', url: SITE } },
-    body, script,
-  });
+// /blog/ now lives in the Blog tab of the main page; keep the old address working.
+function redirectPage() {
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Blog — Jinto Jose</title>
+<meta http-equiv="refresh" content="0; url=/#blog">
+<link rel="canonical" href="${SITE}/">
+<script>location.replace('/#blog');</script>
+</head>
+<body><a href="/#blog">Go to the blog</a></body>
+</html>
+`;
 }
 
 // ---------- single post ----------
 function postPage(p) {
   const body = `<article class="post">
-  <a class="back" href="/blog/">← All posts</a>
+  <a class="back" href="/#blog">← All posts</a>
   <h1 class="post-h">${esc(p.title)}</h1>
   <div class="meta"><time datetime="${p.date}">${fmtDate(p.date)}</time><span>·</span><span>${p.minutes} min read</span>${p.tags.map(t => `<span class="tag">${esc(t)}</span>`).join('')}${p.draft ? '<span class="tag">draft</span>' : ''}</div>
   <div class="prose">
@@ -271,7 +259,7 @@ function sitemap(posts) {
     ['/', '2026-09-07', '1.0'], ['/projects.json', '2026-09-07', '0.9'], ['/ai-readable.md', '2026-09-07', '0.9'],
   ];
   const latest = posts[0]?.date;
-  const urls = [...base, ...(posts.length ? [['/blog/', latest, '0.8'], ['/posts.json', latest, '0.7'], ['/blog/feed.xml', latest, '0.5']] : []),
+  const urls = [...base, ...(posts.length ? [['/posts.json', latest, '0.7'], ['/blog/feed.xml', latest, '0.5']] : []),
     ...posts.map(p => [`/blog/${p.slug}/`, p.date, '0.7'])];
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -297,7 +285,7 @@ mkdirSync(join(blogDir, 'assets'), { recursive: true });
 for (const e of readdirSync(blogDir, { withFileTypes: true })) {
   if (e.isDirectory() && e.name !== 'assets') rmSync(join(blogDir, e.name), { recursive: true });
 }
-writeFileSync(join(blogDir, 'index.html'), indexPage(posts));
+writeFileSync(join(blogDir, 'index.html'), redirectPage());
 for (const p of posts) {
   mkdirSync(join(blogDir, p.slug), { recursive: true });
   writeFileSync(join(blogDir, p.slug, 'index.html'), postPage(p));
@@ -306,6 +294,7 @@ writeFileSync(join(blogDir, 'feed.xml'), feed(posts));
 const indexPath = join(ROOT, 'index.html');
 let home = readFileSync(indexPath, 'utf8');
 home = injectBlock(home, 'HEADER', header('all'));
+home = injectBlock(home, 'BLOG', blogPanel(posts));
 home = injectBlock(home, 'FOOTER', footer());
 writeFileSync(indexPath, home);
 writeFileSync(join(ROOT, 'posts.json'), JSON.stringify(posts.map(({ title, slug, date, tags, summary, linkedin, minutes }) =>
