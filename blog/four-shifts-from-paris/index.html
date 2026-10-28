@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#000000">
+<title>Four shifts I'm carrying back from Paris — Jinto Jose</title>
+<meta name="description" content="Two days at AI Engineer Paris, hosted by Mistral, showed me that the model is no longer the story. The story is everything around it. I spent two days at AI…">
+<meta name="author" content="Jinto Jose">
+<meta property="og:title" content="Four shifts I'm carrying back from Paris — Jinto Jose">
+<meta property="og:description" content="Two days at AI Engineer Paris, hosted by Mistral, showed me that the model is no longer the story. The story is everything around it. I spent two days at AI…">
+<meta property="og:url" content="https://jintomjose.github.io/blog/four-shifts-from-paris/">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://jintomjose.github.io/blog/four-shifts-from-paris/">
+<link rel="alternate" type="application/rss+xml" title="Jinto Jose — Blog" href="https://jintomjose.github.io/blog/feed.xml">
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/blog/assets/post.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Four shifts I'm carrying back from Paris","description":"Two days at AI Engineer Paris, hosted by Mistral, showed me that the model is no longer the story. The story is everything around it. I spent two days at AI…","datePublished":"2026-10-03","keywords":"AI","mainEntityOfPage":"https://jintomjose.github.io/blog/four-shifts-from-paris/","author":{"@type":"Person","name":"Jinto Jose","url":"https://jintomjose.github.io"},"sameAs":["https://www.linkedin.com/feed/update/urn:li:activity:7512157749376512000/"]}</script>
+</head>
+<body>
+<header role="banner">
+<nav class="topbar" aria-label="Main navigation">
+  <a class="logo" href="/">Jinto Jose</a>
+  <div class="tabs">
+    <a class="tab" href="/" data-view="all" data-label="All Projects">All Projects</a>
+    <a class="tab" href="/#ai" data-view="ai" data-label="AI Builds">AI Builds</a>
+    <a class="tab" href="/#web" data-view="web" data-label="Apps">Apps</a>
+    <a class="tab" href="/#data" data-view="data" data-label="Data Products">Data Products</a>
+    <a class="tab" href="/#research" data-view="research" data-label="Research">Research</a>
+    <a class="tab active" href="/#blog" data-view="blog" data-label="Blog" aria-current="page">Blog</a>
+    <a class="tab" href="/#about" data-view="about" data-label="About Jinto">About Jinto</a>
+  </div>
+  <div class="topbar-right">
+    <a class="topbar-link" href="https://github.com/jintomjose" target="_blank" rel="noopener" aria-label="Jinto Jose on GitHub">GitHub ↗</a>
+    <a class="topbar-link" href="https://www.linkedin.com/in/jintojose" target="_blank" rel="noopener" aria-label="Jinto Jose on LinkedIn">LinkedIn ↗</a>
+  </div>
+</nav>
+</header>
+<main id="main-content">
+<article class="post">
+  <a class="back" href="/#blog">← All posts</a>
+  <h1 class="post-h">Four shifts I'm carrying back from Paris</h1>
+  <div class="meta"><time datetime="2026-10-03">3 Oct 2026</time><span>·</span><span>4 min read</span><span class="tag">AI</span></div>
+  <div class="prose">
+<p><em>Two days at AI Engineer Paris, hosted by Mistral, showed me that the model is no longer the story. The story is everything around it.</em></p>
+<hr>
+<p><img src="/assets/posts/four-shifts-from-paris/1.jpg" alt="Jinto at the AI Engineer Paris main stage, organised by Mistral" loading="lazy"></p>
+<hr>
+<p>I spent two days at AI Engineer Paris, hosted by Mistral, in rooms full of people who build with AI every day. I left with fewer answers than I expected, but with one idea that kept coming back in almost every talk:</p>
+<p><strong>AI agents are becoming our users, our buyers and our workforce.</strong></p>
+<p>If that is true, we have to design for them, feed them great context, and govern them. Everything I heard falls into four shifts.</p>
+<hr>
+<h3>1. Customer: agents are the new users</h3>
+<p><img src="/assets/posts/four-shifts-from-paris/2.jpg" alt="Chart from the Stripe talk at AI Engineer Paris" loading="lazy"><br><em>Chart shown in the Stripe talk at AI Engineer Paris</em></p>
+<p>We already design for three personas: the user (UX), the customer (CX) and the developer (DevX). Paris added a fourth: <strong>Agent Experience (AX).</strong></p>
+<p>One line stuck with me: most billing documents are now read by AI agents, not humans. If machines are your main readers, your content, your APIs and your docs need to be written for them.</p>
+<p><img src="/assets/posts/four-shifts-from-paris/3.jpg" alt="Stage slide: PLG, SLG, Marketplace, and agents as buyers" loading="lazy"></p>
+<p>And agents are not just reading. <strong>They are starting to buy things.</strong> They are beginning to initiate payments. The rules for an agent-payments economy have not been written yet. That is an open field.</p>
+<hr>
+<h3>2. Build: agents are only as good as their context</h3>
+<p>Three lessons came up again and again:</p>
+<ul><li><strong>Context is everything.</strong> An agent is only as good as the context it gets. Guardrailed environments keep it on track.</li><li><strong>Great data is critical.</strong> Without it, AI slop grows, and slop is rising everywhere.</li><li><strong>Specialists beat generalists.</strong> One agent for every speciality does not work. Build specialised agents per domain on a common core.</li></ul>
+<p><img src="/assets/posts/four-shifts-from-paris/4.jpg" alt="Main-stage slide titled &quot;A slop grenade fight&quot;" loading="lazy"></p>
+<p>One main-stage slide was titled &quot;A slop grenade fight&quot;. The line that went with it summed up where many teams are:</p>
+<blockquote><strong>Everyone has agents. Nobody has orchestration.</strong></blockquote>
+<hr>
+<h3>3. Control: agent sprawl is real</h3>
+<p>If I had to name the hottest topic in Paris, it was <strong>agent observability</strong>.</p>
+<p>Companies are building so many agents that many no longer know what those agents are doing, or where. The answer people kept coming back to was simple to say and hard to do: track every agent and all of its work, and run agents inside environments with guardrails.</p>
+<p>We spent the last decade learning to observe our software. Now we have to learn to observe our workforce of agents.</p>
+<hr>
+<h3>4. Market: models converge, pricing moves to outcomes</h3>
+<ul><li><strong>Models converge.</strong> Frontier models ship similar tools within days of each other. And sovereign AI is a real option, not just a slogan.</li><li><strong>Everyone builds infra.</strong> Software factories are rising, and big players are swallowing smaller ones. People called it &quot;Pac-Man&quot;.</li><li><strong>Credits are the new currency.</strong> Pricing is moving from consumption, to workflow, to outcome.</li></ul>
+<p><img src="/assets/posts/four-shifts-from-paris/5.jpg" alt="Stripe AI monetization workshop slide on consumption, workflow and outcome pricing" loading="lazy"><br><em>Slide: Stripe, AI monetization workshop, AI Engineer Paris</em></p>
+<p>The Stripe workshop made this concrete with three ways to price AI:</p>
+<ul><li><strong>Consumption-based:</strong> bill for technical resources (per token, per API call, per compute time).</li><li><strong>Workflow-based:</strong> bill for completed tasks (per image generated, per document summarised).</li><li><strong>Outcome-based:</strong> bill for business results (per candidate hired, per qualified lead).</li></ul>
+<p>Their tip: translate value into credits. Bundle features into a currency and let users buy what matters most.</p>
+<hr>
+<h3>We have been here before</h3>
+<p><img src="/assets/posts/four-shifts-from-paris/6.jpg" alt="Slide on the productivity paradox: computers took a decade to show up in productivity numbers" loading="lazy"></p>
+<p>Computers took about a decade to show up in productivity numbers. The unlock did not come from the machines. It came from software, skills, processes and organisational capital catching up.</p>
+<p>My take: AI will follow the same arc. The technology is ahead. The organisations are not, yet.</p>
+<hr>
+<h3>The takeaway</h3>
+<p><img src="/assets/posts/four-shifts-from-paris/7.jpg" alt="Closing moment on the main stage at AI Engineer Paris" loading="lazy"></p>
+<blockquote><strong>The model is becoming a commodity. The advantage is context, data and discipline.</strong></blockquote>
+<p>That is what I am taking home from Paris.</p>
+<p>Which of these four shifts do you see showing up first where you work?</p>
+<hr>
+<p><em>I write about agentic coding, AI-native ways of working and the speed of learning. Follow along if that is your thing.</em></p>
+<p>The carousel version is <a href="https://www.linkedin.com/feed/update/urn:li:activity:7512157749376512000/" rel="noopener">on LinkedIn</a>.</p>
+  </div>
+  <div class="post-foot glass">
+    <span>Also posted on LinkedIn on 3 Oct 2026.</span>
+    <span><a href="https://www.linkedin.com/feed/update/urn:li:activity:7512157749376512000/" rel="noopener">View on LinkedIn ↗</a> · <a href="https://github.com/jintomjose/jintomjose.github.io/blob/main/posts/2026-10-03-four-shifts-from-paris.md" rel="noopener">Edit on GitHub ↗</a></span>
+  </div>
+</article>
+</main>
+<footer class="footer" role="contentinfo">
+  <small class="footer-name">© 2026 Jinto Jose · Head of Product · The Netherlands</small>
+  <div class="footer-links">
+    <a class="footer-link" href="https://github.com/jintomjose" target="_blank" rel="noopener" aria-label="GitHub profile">GitHub</a>
+    <a class="footer-link" href="https://www.linkedin.com/in/jintojose" target="_blank" rel="noopener" aria-label="LinkedIn profile">LinkedIn</a>
+    <a class="footer-link" href="/blog/feed.xml" aria-label="Blog RSS feed">RSS</a>
+    <a class="footer-link" href="/projects.json" aria-label="Machine-readable projects data">projects.json</a>
+    <a class="footer-link" href="/posts.json" aria-label="Machine-readable blog posts">posts.json</a>
+  </div>
+</footer>
+
+</body>
+</html>

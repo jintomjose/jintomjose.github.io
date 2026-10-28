@@ -1,1 +1,85 @@
-[]
+[
+  {
+    "title": "The work did not disappear. It moved upstream",
+    "url": "https://jintomjose.github.io/blog/work-moved-upstream/",
+    "date": "2026-10-27",
+    "tags": [
+      "Product",
+      "AI"
+    ],
+    "summary": "89% of the scope in my habit-tracker app was built by an agent. The other 11% took the most thought: pricing, product taste, killing an idea I'd argued…",
+    "readingMinutes": 1,
+    "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7520741352691761152/"
+  },
+  {
+    "title": "My one-person software factory",
+    "url": "https://jintomjose.github.io/blog/one-person-software-factory/",
+    "date": "2026-10-22",
+    "tags": [
+      "AI",
+      "Building"
+    ],
+    "summary": "118 story points in 3 days. My original sprint plan had spread them over 6 sprints. That came from my habit-tracker app, built mostly by a coding agent. But…",
+    "readingMinutes": 1,
+    "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7518914039301865472/"
+  },
+  {
+    "title": "Four companies, four AI-native SDLCs",
+    "url": "https://jintomjose.github.io/blog/four-ai-sdlc-playbooks/",
+    "date": "2026-10-20",
+    "tags": [
+      "AI",
+      "Building"
+    ],
+    "summary": "4 companies published their take on the AI-native software lifecycle in the last few months: Anthropic, Atlassian, Google Cloud and Shopify. I read them…",
+    "readingMinutes": 1,
+    "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7518189933459558400/"
+  },
+  {
+    "title": "Four shifts I'm carrying back from Paris",
+    "url": "https://jintomjose.github.io/blog/four-shifts-from-paris/",
+    "date": "2026-10-03",
+    "tags": [
+      "AI"
+    ],
+    "summary": "Two days at AI Engineer Paris, hosted by Mistral, showed me that the model is no longer the story. The story is everything around it. I spent two days at AI…",
+    "readingMinutes": 4,
+    "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7512157749376512000/"
+  },
+  {
+    "title": "Two days at AI Engineer Paris, hosted by Mistral",
+    "url": "https://jintomjose.github.io/blog/ai-engineer-paris/",
+    "date": "2026-09-24",
+    "tags": [
+      "AI"
+    ],
+    "summary": "Two days at AI Engineer Paris, hosted by Mistral. A strategy team from a bank, in a hall full of engineers, researchers and builders. That used to feel like…",
+    "readingMinutes": 1,
+    "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7508945246131589120/"
+  },
+  {
+    "title": "Prioritisation is a leadership habit, not a one-time framework",
+    "url": "https://jintomjose.github.io/blog/prioritisation-leadership-habit/",
+    "date": "2026-09-16",
+    "tags": [
+      "Product",
+      "Leadership"
+    ],
+    "summary": "Most teams treat prioritisation like a meeting. They schedule it, run a scoring exercise, produce a ranked list — and then don't revisit it until something…",
+    "readingMinutes": 4,
+    "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7505869759226474496/"
+  },
+  {
+    "title": "Why I started building again",
+    "url": "https://jintomjose.github.io/blog/why-i-started-building-again/",
+    "date": "2026-06-06",
+    "tags": [
+      "Building",
+      "AI",
+      "Career"
+    ],
+    "summary": "I've worked with data for most of my career. And for most of that career, there was always a missing piece — we could collect it, store it, model it. But…",
+    "readingMinutes": 2,
+    "linkedin": "https://www.linkedin.com/posts/jintojose_why-i-started-building-again-ive-worked-share-7469121523178520576-QpyG"
+  }
+]

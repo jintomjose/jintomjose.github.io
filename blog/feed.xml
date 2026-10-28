@@ -6,6 +6,214 @@
   <atom:link href="https://jintomjose.github.io/blog/feed.xml" rel="self" type="application/rss+xml"/>
   <description>Notes on product, data and AI-native building.</description>
   <language>en</language>
-
+  <item>
+    <title>The work did not disappear. It moved upstream</title>
+    <link>https://jintomjose.github.io/blog/work-moved-upstream/</link>
+    <guid isPermaLink="true">https://jintomjose.github.io/blog/work-moved-upstream/</guid>
+    <pubDate>Tue, 27 Oct 2026 09:00:00 GMT</pubDate>
+    <description>89% of the scope in my habit-tracker app was built by an agent. The other 11% took the most thought: pricing, product taste, killing an idea I'd argued…</description>
+    <content:encoded><![CDATA[<p>89% of the scope in my habit-tracker app was built by an agent.</p>
+<p>The other 11% took the most thought: pricing, product taste, killing an idea I'd argued myself into, and the paperwork. AI contributed nothing there, on purpose.</p>
+<p>That's the pattern I keep seeing, in my own builds and in every SDLC playbook I read this autumn. The work didn't disappear. It moved upstream, into product craft.</p>
+<p>When building is cheap, a vague idea gets built anyway. Fast. So the scarce skills change:<br>→ framing a problem well enough to know what not to build<br>→ writing a spec an agent can execute without guessing<br>→ judging output faster than it arrives<br>→ measuring outcomes instead of counting output</p>
+<p>This is why I think the product lifecycle, not the software lifecycle, becomes the real constraint. Product people who mostly coordinated will feel it first. Those who can grill an idea, write the spec and judge the result will have more leverage than ever.</p>
+<p>Fewer hands on the keyboard. A much higher bar for craft.</p>
+<p><img src="/assets/posts/work-moved-upstream/1.jpg" alt="Chart titled &quot;The work didn't disappear. It moved upstream.&quot; Before, most effort went to Build; now it goes to Problem, Spec, Review and Learn. Below, four product crafts: problem framing, spec writing, taste and review, measurement." loading="lazy"></p>
+<p>Part 3 of 3.</p>
+<p>Which product skill are you investing in for the next two years?</p>
+<hr>
+<p>The whole series, open source:<br>Part 1, four SDLC playbooks compared: <a href="https://github.com/jintomjose/ai-native-sdlc-playbooks" rel="noopener">https://github.com/jintomjose/ai-native-sdlc-playbooks</a><br>Part 2, my mini software factory: <a href="https://github.com/jintomjose/mini-software-factory" rel="noopener">https://github.com/jintomjose/mini-software-factory</a></p>
+<p>P.S. The chart is illustrative, drawn from my own builds, not a study.</p>]]></content:encoded>
+    <category>Product</category>
+    <category>AI</category>
+  </item>
+  <item>
+    <title>My one-person software factory</title>
+    <link>https://jintomjose.github.io/blog/one-person-software-factory/</link>
+    <guid isPermaLink="true">https://jintomjose.github.io/blog/one-person-software-factory/</guid>
+    <pubDate>Thu, 22 Oct 2026 09:00:00 GMT</pubDate>
+    <description>118 story points in 3 days. My original sprint plan had spread them over 6 sprints. That came from my habit-tracker app, built mostly by a coding agent. But…</description>
+    <content:encoded><![CDATA[<p>118 story points in 3 days. My original sprint plan had spread them over 6 sprints.</p>
+<p>That came from my habit-tracker app, built mostly by a coding agent. But the agent was only one station. What made it work was the loop around it. At AI Engineer Paris last month, people kept calling that loop a software factory.</p>
+<p>Mine is small: one person, nine stations.</p>
+<p>An idea gets grilled before it becomes an intent file. Then a spec, then a plan I approve before any code is written. The agent builds with a CLAUDE.md that remembers its past mistakes, and with hooks that block what must never happen. A separate agent verifies the work, another reviews it, and I approve. Incidents become the next intent.</p>
+<p>The line I heard most in Paris: &quot;Everyone has agents. Nobody has orchestration.&quot;</p>
+<p>The factory is the orchestration.</p>
+<p>I've open-sourced my setup as a template you can drop into a repo: skills, hooks, subagents, the templates and one worked example.</p>
+<p>One honest caveat: 3 days against 6 sprints is calendar time against a plan, not a lab experiment. The method is open too.</p>
+<p><img src="/assets/posts/one-person-software-factory/1.jpg" alt="Diagram titled &quot;My one-person software factory&quot;: nine stations in a loop, from Signal and Grill through Intent, Spec, Plan, Build, Verify, Review and Ship to Observe and measure. Signal and Grill, Plan and Review are highlighted as the steps where I stay in the loop." loading="lazy"></p>
+<p>Part 2 of 3.</p>
+<p>Where does work pile up in your delivery chain now that code is fast?</p>
+<hr>
+<p>The template: <a href="https://github.com/jintomjose/mini-software-factory" rel="noopener">https://github.com/jintomjose/mini-software-factory</a><br>How I measure delivery against the plan: <a href="https://github.com/jintomjose/agentic-benchmarks" rel="noopener">https://github.com/jintomjose/agentic-benchmarks</a><br>Part 1, the research behind it: <a href="https://github.com/jintomjose/ai-native-sdlc-playbooks" rel="noopener">https://github.com/jintomjose/ai-native-sdlc-playbooks</a><br>My Paris notes: <a href="https://github.com/jintomjose/AI-Engineer-Paris-2026" rel="noopener">https://github.com/jintomjose/AI-Engineer-Paris-2026</a></p>]]></content:encoded>
+    <category>AI</category>
+    <category>Building</category>
+  </item>
+  <item>
+    <title>Four companies, four AI-native SDLCs</title>
+    <link>https://jintomjose.github.io/blog/four-ai-sdlc-playbooks/</link>
+    <guid isPermaLink="true">https://jintomjose.github.io/blog/four-ai-sdlc-playbooks/</guid>
+    <pubDate>Tue, 20 Oct 2026 09:00:00 GMT</pubDate>
+    <description>4 companies published their take on the AI-native software lifecycle in the last few months: Anthropic, Atlassian, Google Cloud and Shopify. I read them…</description>
+    <content:encoded><![CDATA[<p>4 companies published their take on the AI-native software lifecycle in the last few months: Anthropic, Atlassian, Google Cloud and Shopify.</p>
+<p>I read them side by side.</p>
+<p>They agree on more than I expected. Writing code is no longer the bottleneck. Review is. And the quality of the context you give an agent matters more than which model you pick.</p>
+<p>Where they split is more useful. Should the source of truth live in the repo or in a platform graph? One standard agent tool, or many? Hard blocking guardrails, or alerts that keep experiments alive?</p>
+<p>Those are three decisions every organisation will have to make on purpose.</p>
+<p>What surprised me most: none of the four publishes a methodology behind its numbers. Shopify's engineering head has even said publicly that its 20% productivity figure was his own rough estimate.</p>
+<p>So I put my notes, the full comparison and a 16-point self-assessment in an open repo. The short version is a 9-page carousel.</p>
+<p>Part 1 of 3. Next: what a software factory looks like when you build one yourself.</p>
+<p>Which of the three decisions would be hardest where you work?</p>
+<p><img src="/assets/posts/four-ai-sdlc-playbooks/1.jpg" alt="Cover of the carousel: &quot;Four companies. Four AI-native SDLCs.&quot; with chips for Anthropic, Atlassian, Google Cloud and Shopify." loading="lazy"></p>
+<p>Originally a carousel on LinkedIn — see <a href="https://www.linkedin.com/feed/update/urn:li:activity:7518189933459558400/" rel="noopener">the original</a>, or download <a href="https://jintomjose.github.io/ai-native-sdlc-playbooks/four-ai-sdlc-playbooks.pdf" rel="noopener">the PDF</a>.</p>
+<hr>
+<p>The research, open for anyone to use:<br>📊 Scrollable visual: <a href="https://jintomjose.github.io/ai-native-sdlc-playbooks/" rel="noopener">https://jintomjose.github.io/ai-native-sdlc-playbooks/</a><br>📚 Repo with full notes and the self-assessment: <a href="https://github.com/jintomjose/ai-native-sdlc-playbooks" rel="noopener">https://github.com/jintomjose/ai-native-sdlc-playbooks</a></p>
+<p>Original sources:<br>Anthropic: <a href="https://claude.com/blog/the-ai-native-sdlc-playbook" rel="noopener">https://claude.com/blog/the-ai-native-sdlc-playbook</a><br>Atlassian: <a href="https://www.atlassian.com/blog/ai-at-work/ai-sdlc-transformation-playbook" rel="noopener">https://www.atlassian.com/blog/ai-at-work/ai-sdlc-transformation-playbook</a><br>Google Cloud: <a href="https://cloud.google.com/use-cases/ai-sdlc" rel="noopener">https://cloud.google.com/use-cases/ai-sdlc</a><br>Shopify (Bessemer): <a href="https://www.bvp.com/atlas/inside-shopifys-ai-first-engineering-playbook" rel="noopener">https://www.bvp.com/atlas/inside-shopifys-ai-first-engineering-playbook</a></p>
+<p>My own reading, not my employer's view.</p>]]></content:encoded>
+    <category>AI</category>
+    <category>Building</category>
+  </item>
+  <item>
+    <title>Four shifts I'm carrying back from Paris</title>
+    <link>https://jintomjose.github.io/blog/four-shifts-from-paris/</link>
+    <guid isPermaLink="true">https://jintomjose.github.io/blog/four-shifts-from-paris/</guid>
+    <pubDate>Sat, 03 Oct 2026 09:00:00 GMT</pubDate>
+    <description>Two days at AI Engineer Paris, hosted by Mistral, showed me that the model is no longer the story. The story is everything around it. I spent two days at AI…</description>
+    <content:encoded><![CDATA[<p><em>Two days at AI Engineer Paris, hosted by Mistral, showed me that the model is no longer the story. The story is everything around it.</em></p>
+<hr>
+<p><img src="/assets/posts/four-shifts-from-paris/1.jpg" alt="Jinto at the AI Engineer Paris main stage, organised by Mistral" loading="lazy"></p>
+<hr>
+<p>I spent two days at AI Engineer Paris, hosted by Mistral, in rooms full of people who build with AI every day. I left with fewer answers than I expected, but with one idea that kept coming back in almost every talk:</p>
+<p><strong>AI agents are becoming our users, our buyers and our workforce.</strong></p>
+<p>If that is true, we have to design for them, feed them great context, and govern them. Everything I heard falls into four shifts.</p>
+<hr>
+<h3>1. Customer: agents are the new users</h3>
+<p><img src="/assets/posts/four-shifts-from-paris/2.jpg" alt="Chart from the Stripe talk at AI Engineer Paris" loading="lazy"><br><em>Chart shown in the Stripe talk at AI Engineer Paris</em></p>
+<p>We already design for three personas: the user (UX), the customer (CX) and the developer (DevX). Paris added a fourth: <strong>Agent Experience (AX).</strong></p>
+<p>One line stuck with me: most billing documents are now read by AI agents, not humans. If machines are your main readers, your content, your APIs and your docs need to be written for them.</p>
+<p><img src="/assets/posts/four-shifts-from-paris/3.jpg" alt="Stage slide: PLG, SLG, Marketplace, and agents as buyers" loading="lazy"></p>
+<p>And agents are not just reading. <strong>They are starting to buy things.</strong> They are beginning to initiate payments. The rules for an agent-payments economy have not been written yet. That is an open field.</p>
+<hr>
+<h3>2. Build: agents are only as good as their context</h3>
+<p>Three lessons came up again and again:</p>
+<ul><li><strong>Context is everything.</strong> An agent is only as good as the context it gets. Guardrailed environments keep it on track.</li><li><strong>Great data is critical.</strong> Without it, AI slop grows, and slop is rising everywhere.</li><li><strong>Specialists beat generalists.</strong> One agent for every speciality does not work. Build specialised agents per domain on a common core.</li></ul>
+<p><img src="/assets/posts/four-shifts-from-paris/4.jpg" alt="Main-stage slide titled &quot;A slop grenade fight&quot;" loading="lazy"></p>
+<p>One main-stage slide was titled &quot;A slop grenade fight&quot;. The line that went with it summed up where many teams are:</p>
+<blockquote><strong>Everyone has agents. Nobody has orchestration.</strong></blockquote>
+<hr>
+<h3>3. Control: agent sprawl is real</h3>
+<p>If I had to name the hottest topic in Paris, it was <strong>agent observability</strong>.</p>
+<p>Companies are building so many agents that many no longer know what those agents are doing, or where. The answer people kept coming back to was simple to say and hard to do: track every agent and all of its work, and run agents inside environments with guardrails.</p>
+<p>We spent the last decade learning to observe our software. Now we have to learn to observe our workforce of agents.</p>
+<hr>
+<h3>4. Market: models converge, pricing moves to outcomes</h3>
+<ul><li><strong>Models converge.</strong> Frontier models ship similar tools within days of each other. And sovereign AI is a real option, not just a slogan.</li><li><strong>Everyone builds infra.</strong> Software factories are rising, and big players are swallowing smaller ones. People called it &quot;Pac-Man&quot;.</li><li><strong>Credits are the new currency.</strong> Pricing is moving from consumption, to workflow, to outcome.</li></ul>
+<p><img src="/assets/posts/four-shifts-from-paris/5.jpg" alt="Stripe AI monetization workshop slide on consumption, workflow and outcome pricing" loading="lazy"><br><em>Slide: Stripe, AI monetization workshop, AI Engineer Paris</em></p>
+<p>The Stripe workshop made this concrete with three ways to price AI:</p>
+<ul><li><strong>Consumption-based:</strong> bill for technical resources (per token, per API call, per compute time).</li><li><strong>Workflow-based:</strong> bill for completed tasks (per image generated, per document summarised).</li><li><strong>Outcome-based:</strong> bill for business results (per candidate hired, per qualified lead).</li></ul>
+<p>Their tip: translate value into credits. Bundle features into a currency and let users buy what matters most.</p>
+<hr>
+<h3>We have been here before</h3>
+<p><img src="/assets/posts/four-shifts-from-paris/6.jpg" alt="Slide on the productivity paradox: computers took a decade to show up in productivity numbers" loading="lazy"></p>
+<p>Computers took about a decade to show up in productivity numbers. The unlock did not come from the machines. It came from software, skills, processes and organisational capital catching up.</p>
+<p>My take: AI will follow the same arc. The technology is ahead. The organisations are not, yet.</p>
+<hr>
+<h3>The takeaway</h3>
+<p><img src="/assets/posts/four-shifts-from-paris/7.jpg" alt="Closing moment on the main stage at AI Engineer Paris" loading="lazy"></p>
+<blockquote><strong>The model is becoming a commodity. The advantage is context, data and discipline.</strong></blockquote>
+<p>That is what I am taking home from Paris.</p>
+<p>Which of these four shifts do you see showing up first where you work?</p>
+<hr>
+<p><em>I write about agentic coding, AI-native ways of working and the speed of learning. Follow along if that is your thing.</em></p>
+<p>The carousel version is <a href="https://www.linkedin.com/feed/update/urn:li:activity:7512157749376512000/" rel="noopener">on LinkedIn</a>.</p>]]></content:encoded>
+    <category>AI</category>
+  </item>
+  <item>
+    <title>Two days at AI Engineer Paris, hosted by Mistral</title>
+    <link>https://jintomjose.github.io/blog/ai-engineer-paris/</link>
+    <guid isPermaLink="true">https://jintomjose.github.io/blog/ai-engineer-paris/</guid>
+    <pubDate>Thu, 24 Sep 2026 09:00:00 GMT</pubDate>
+    <description>Two days at AI Engineer Paris, hosted by Mistral. A strategy team from a bank, in a hall full of engineers, researchers and builders. That used to feel like…</description>
+    <content:encoded><![CDATA[<p>Two days at AI Engineer Paris, hosted by Mistral.</p>
+<p>A strategy team from a bank, in a hall full of engineers, researchers and builders. That used to feel like the wrong room. Not anymore.</p>
+<p>Great to talk with Matt Pocock (AI Hero) about knowledge spaces and ontology, and briefly about his /grill-me skill, which I use more than almost any other.</p>
+<p>I'm leaving with lots of learnings. Sharing them next week.</p>]]></content:encoded>
+    <category>AI</category>
+  </item>
+  <item>
+    <title>Prioritisation is a leadership habit, not a one-time framework</title>
+    <link>https://jintomjose.github.io/blog/prioritisation-leadership-habit/</link>
+    <guid isPermaLink="true">https://jintomjose.github.io/blog/prioritisation-leadership-habit/</guid>
+    <pubDate>Wed, 16 Sep 2026 09:00:00 GMT</pubDate>
+    <description>Most teams treat prioritisation like a meeting. They schedule it, run a scoring exercise, produce a ranked list — and then don't revisit it until something…</description>
+    <content:encoded><![CDATA[<p><img src="/assets/posts/prioritisation-leadership-habit/1.jpg" alt="Jinto presenting the prioritisation session; the screen behind him reads &quot;Ask what changes, not what ships&quot;." loading="lazy"></p>
+<p>Most teams treat prioritisation like a meeting.</p>
+<p>They schedule it, run a scoring exercise, produce a ranked list — and then don't revisit it until something breaks. The backlog grows. The roadmap drifts. By the time the next prioritisation session happens, half the context has changed and nobody quite remembers why item 7 ever made the top 10.</p>
+<p>In product-led growth, this is expensive. Every misaligned bet doesn't just waste a sprint — it slows activation, stalls retention, and delays revenue. In PLG, the product <em>is</em> the growth engine. A bad priority call isn't a planning problem. It's a business problem.</p>
+<p>The real issue isn't the framework. It's the frequency.</p>
+<hr>
+<h3>01 · Outcomes over output</h3>
+<p><strong>Ask what changes, not what ships.</strong></p>
+<p>Output is a proxy. What the team actually gets paid for is the behaviour or metric that changes as a result — an activation rate that moves, a drop in customer effort, an expansion trigger that fires. Shipping is the means. The outcome is the point.</p>
+<p>Before ranking anything on your backlog, name the outcome each item is meant to move. Activation. Retention. Expansion. Operational efficiency. If an item can't name its outcome clearly, it goes to the bottom — no exceptions, no &quot;we'll figure it out in planning.&quot;</p>
+<p>This one discipline alone changes how backlog conversations happen. Suddenly the debate isn't about what's technically feasible or which stakeholder asked first. It's about which outcome matters most <em>right now</em> — and whether this item actually moves it.</p>
+<hr>
+<h3>02 · Cut ruthlessly</h3>
+<p><strong>Fewer bets, made on purpose.</strong></p>
+<p>A roadmap with forty items is a roadmap with no priorities.</p>
+<p>When everything is a priority, nothing is. The team spreads across too many threads, context-switches constantly, and delivers everything slowly rather than the right things fast. In PLG especially, where the feedback loop between product and growth is tight, diffused effort is the enemy.</p>
+<p>Cutting isn't failure. Cutting is the decision.</p>
+<p>The hardest part isn't identifying what to cut — most teams know what's low-value if they're honest. The hard part is saying no <em>visibly and early</em>, before work has started and sunk costs accumulate. A quiet no just becomes a slow yes. And a slow yes is the most expensive form of prioritisation.</p>
+<p>Protect your team's capacity for the bets that actually matter. The discipline to say fewer things means you can say them fully.</p>
+<hr>
+<h3>03 · Make it a habit</h3>
+<p><strong>Build the muscle, not the moment.</strong></p>
+<p>A framework used once is a slide. Used every cycle, it's a habit.</p>
+<p>This is the part most teams skip. They run a prioritisation session, feel good about the outcome, and then let the ranked list gather dust until the next quarterly planning cycle — by which point the market has shifted, customer data has accumulated, and the &quot;top priority&quot; from three months ago is no longer the right call.</p>
+<p>The fix isn't a better framework. It's a fixed cadence.</p>
+<p>Revisit priorities on a rhythm — not only when a crisis forces the conversation. Make the criteria visible enough that the team can apply them without you in the room. When prioritisation is a shared habit rather than a leader's decision, the organisation gets faster and more aligned at the same time.</p>
+<p>That's the goal: a team that doesn't need a meeting to know what matters most.</p>
+<hr>
+<p><img src="/assets/posts/prioritisation-leadership-habit/2.jpg" alt="Closing slide: &quot;3 things to carry back&quot;: 01 Outcomes over output, 02 Cut ruthlessly, 03 Make it a habit." loading="lazy"></p>
+<h3>The leadership line</h3>
+<p>Here's what I keep coming back to after facilitating sessions like this:</p>
+<p>Prioritisation is not a skill you learn once and apply. It's a habit you build deliberately — in how you run planning, in how you push back on stakeholders, in how you create space for the team to make good calls independently.</p>
+<p>The three lenses — <strong>outcome over output, ruthless cutting, fixed cadence</strong> — aren't a checklist. They're a posture. Applied consistently, they change how a product team thinks, not just what it builds next.</p>
+<p>Every yes is a no to something else, including the growth lever you didn't fund. Make your yes count.</p>
+<hr>
+<p><em>I facilitated a live breakout session on this at a Product Management community event, with product owners, leads, and tech leads working through a five-item backlog ranking exercise against these three lenses. The conversation in the room confirmed what I've seen repeatedly: most teams know what the right priorities are. They just need the discipline — and the habit — to act on them consistently.</em></p>
+<p><em>What's the one item on your current backlog that everyone privately knows shouldn't be there?</em></p>]]></content:encoded>
+    <category>Product</category>
+    <category>Leadership</category>
+  </item>
+  <item>
+    <title>Why I started building again</title>
+    <link>https://jintomjose.github.io/blog/why-i-started-building-again/</link>
+    <guid isPermaLink="true">https://jintomjose.github.io/blog/why-i-started-building-again/</guid>
+    <pubDate>Sat, 06 Jun 2026 09:00:00 GMT</pubDate>
+    <description>I've worked with data for most of my career. And for most of that career, there was always a missing piece — we could collect it, store it, model it. But…</description>
+    <content:encoded><![CDATA[<p>I've worked with data for most of my career.</p>
+<p>And for most of that career, there was always a missing piece — we could collect it, store it, model it. But turning it into something useful, quickly, for real people? That always felt one step away.</p>
+<p>GenAI changed that equation.</p>
+<p>Here's my timeline:</p>
+<p>→ 2022 — ChatGPT hits. Everyone's talking about it.<br>→ 2024 — Agentic AI becomes the new buzzword.<br>→ 2025 — I hear the term &quot;vibe coding&quot; for the first time.</p>
+<p>The reaction in most rooms: smirks. Skepticism. That's not real engineering.</p>
+<p>My reaction: this is my way back in.</p>
+<p>I haven't written production code in years. My role doesn't allow it. But I used to from C++ on a Pentium 4 to ETL pipelines until 7 years back. That feeling never left.</p>
+<p>Andrej Karpathy's framing of vibe coding gave me permission to play again.</p>
+<p>I started with Base44 around summer 2025. No grand plan. Just curiosity and my oldest habit: obsessing over productivity. I wanted to build a simple habit tracker — something to keep my top 3 goals visible every day.</p>
+<p>What came out was Momentum.</p>
+<p><img src="/assets/posts/why-i-started-building-again/1.jpg" alt="Momentum landing page: &quot;Build Momentum That Lasts Forever. Focus on what matters most. Track 3 core habits.&quot;" loading="lazy"></p>
+<p>Rough at first. Then better. I used it through the entire build process. I still use it now.<br>👉 <a href="https://lnkd.in/ev8aHEHM" rel="noopener">https://lnkd.in/ev8aHEHM</a></p>
+<p>Back in summer 2025 I didn't even know Claude existed. (Yes, living under a rock.)</p>
+<p>But that small build unlocked something bigger. What I understood — slowly, then all at once — is that software is entering a genuinely new era. Not hype. A structural shift in who gets to build, and how fast.</p>
+<p>That energy from writing my first loop in C++? It's back. Louder than before.</p>
+<p>This is the first post in a series on what I've been building, learning, and where I think this is all heading.</p>
+<p>If you're a product person, a data person, or someone who used to build things and stopped —</p>
+<p>This one's for you.</p>]]></content:encoded>
+    <category>Building</category>
+    <category>AI</category>
+    <category>Career</category>
+  </item>
 </channel>
 </rss>

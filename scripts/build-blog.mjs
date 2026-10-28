@@ -80,7 +80,12 @@ function parsePost(file) {
   const body = m[2].trim();
   const slug = fm.slug || file.replace(/\.md$/, '').replace(/^\d{4}-\d{2}-\d{2}-/, '');
   const words = body.split(/\s+/).filter(Boolean).length;
-  const plain = body.replace(/[#>*`_\[\]()!-]/g, ' ').replace(/\s+/g, ' ').trim();
+  const plain = body
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, ' ')
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
+    .replace(/^(#{1,6}\s+|>\s?|---+\s*$|\s*([-*]|\d+\.)\s+)/gm, '')
+    .replace(/[*`]/g, '')
+    .replace(/\s+/g, ' ').trim();
   return {
     file, slug, title: fm.title, date: fm.date,
     tags: (fm.tags || '').split(',').map(t => t.trim()).filter(Boolean),
