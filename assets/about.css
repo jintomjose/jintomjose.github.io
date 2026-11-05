@@ -19,7 +19,7 @@
   .btn.primary { background: var(--pbg); color: var(--pfg); } .btn.primary:hover { background: var(--pbg-h); }
   .btn.ghost { background: var(--sbg); color: var(--body); border: 1px solid var(--sline); } .btn.ghost:hover { color: var(--strong); border-color: var(--line-strong); }
   .portrait { position: relative; border-radius: 24px; overflow: hidden; aspect-ratio: 4/5; border: 1px solid var(--glass-line); box-shadow: var(--glass-hi), 0 30px 80px rgba(0,0,0,.6); }
-  .portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 62% 50%; filter: grayscale(.25) contrast(1.05); display: block; }
+  .portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; display: block; }
   .portrait::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 55%, rgba(0,0,0,.75)); }
 
   /* STATS */
