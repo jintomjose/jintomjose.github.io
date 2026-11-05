@@ -13,6 +13,7 @@
 | Location | Netherlands |
 | GitHub | https://github.com/jintomjose |
 | Portfolio | https://jintomjose.github.io |
+| Intro / career timeline | https://jintomjose.github.io/about/ |
 | LinkedIn | https://www.linkedin.com/in/jintojose |
 
 ---

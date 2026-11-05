@@ -2,7 +2,7 @@
 // Builds the blog from posts/*.md into static files GitHub Pages can serve.
 //   node scripts/build-blog.mjs            published posts only
 //   node scripts/build-blog.mjs --drafts   include `draft: true` posts (local preview)
-// Also writes the shared header/footer and the Blog tab into index.html (between the BUILD markers).
+// Also writes the shared header/footer and the Blog tab into index.html, and the shared header/footer into about/index.html (between the BUILD markers).
 // Outputs: the Blog tab inside index.html, blog/<slug>/index.html, a /blog/ redirect, blog/feed.xml, posts.json, sitemap.xml
 import { readFileSync, writeFileSync, readdirSync, mkdirSync, rmSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
@@ -257,7 +257,7 @@ ${items}
 
 function sitemap(posts) {
   const base = [
-    ['/', '2026-09-07', '1.0'], ['/projects.json', '2026-09-07', '0.9'], ['/ai-readable.md', '2026-09-07', '0.9'],
+    ['/', '2026-09-07', '1.0'], ['/about/', '2026-11-05', '0.9'], ['/projects.json', '2026-09-07', '0.9'], ['/ai-readable.md', '2026-09-07', '0.9'],
   ];
   const latest = posts[0]?.date;
   const urls = [...base, ...(posts.length ? [['/posts.json', latest, '0.7'], ['/blog/feed.xml', latest, '0.5']] : []),
@@ -298,6 +298,11 @@ home = injectBlock(home, 'HEADER', header('all'));
 home = injectBlock(home, 'BLOG', blogPanel(posts));
 home = injectBlock(home, 'FOOTER', footer());
 writeFileSync(indexPath, home);
+const aboutPath = join(ROOT, 'about', 'index.html');
+let about = readFileSync(aboutPath, 'utf8');
+about = injectBlock(about, 'HEADER', header('about'));
+about = injectBlock(about, 'FOOTER', footer());
+writeFileSync(aboutPath, about);
 writeFileSync(join(ROOT, 'posts.json'), JSON.stringify(posts.map(({ title, slug, date, tags, summary, linkedin, minutes }) =>
   ({ title, url: `${SITE}/blog/${slug}/`, date, tags, summary, readingMinutes: minutes, ...(linkedin ? { linkedin } : {}) })), null, 2) + '\n');
 writeFileSync(join(ROOT, 'sitemap.xml'), sitemap(posts));
